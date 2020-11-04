@@ -1,0 +1,53 @@
+/* Variables */
+:root{
+    --purple: #694BE4;
+    --yellow: #F8F534;
+    --red: #F53141;
+    --blue: #3DA6F0;
+    --green: #4CF37C;
+    --dark: #161C2C;
+    --light: #E4E4E4;
+}
+
+body{
+  background-color: var(--dark);
+  font-family: 'Mukta', sans-serif;
+}
+
+.home{
+  color: var(--red);
+}
+
+
+.mega-title{
+  font-family: 'Anton', sans-serif;
+  letter-spacing: -0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+  .mega-title{
+    font-size: 50vw;
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+  .mega-title{
+    font-size: 30vw;
+  }
+}
