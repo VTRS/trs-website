@@ -1,0 +1,8 @@
+#terms{
+    --primary: #EF5F02;
+    color: var(--primary)
+}
+
+.coverdiv {
+    background-color: #EF5F02;
+}

@@ -6,4 +6,6 @@ from django.conf.urls.static import static
 app_name = 'shared'
 urlpatterns = [
     path('', views.home, name='home'),
+    path('terms', views.terms, name='terms'),
+    path('contact', views.contact, name='contact')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

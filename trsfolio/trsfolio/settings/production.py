@@ -26,3 +26,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Email
+with open('/etc/email_password.txt') as f:
+    EMAIL_HOST_PASSWORD = f.read().strip()
+
+EMAIL_HOST = 'smtp.ionos.mx'
+EMAIL_HOST_USER = 'spam@hugotrs.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'spam@hugotrs.com'
