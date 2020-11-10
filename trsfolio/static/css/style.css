@@ -23,7 +23,7 @@ button {
 	border-radius: 4px;
 	outline: 0;
 	overflow:hidden;
-	background: none;
+	background-color: var(--secondary);
 	z-index: 1;
 	cursor: pointer;
 	transition:         0.08s ease-in;
@@ -161,6 +161,13 @@ h3 {
 	top: 0;
 }
 
+.button-div{
+	width: 100%;
+	position: fixed;
+	text-align: center;
+	align-content: center;
+}
+
 
 @media screen and (min-width: 320px) {
 	html {
@@ -174,6 +181,15 @@ h3 {
 	.md-modal{
 		top: 13%;
 	}
+
+	.button-div{
+		bottom: 2rem;
+	}
+
+	.content{
+		margin-top: 3rem;
+	}
+
 }
   
 @media screen and (min-width: 1000px) {
@@ -184,9 +200,18 @@ h3 {
 		top: 5%;
 	}
 	.contact-icon{
-		margin-right: 1rem;
-		margin-left: 1rem;
+		width: 3.5rem;
+		margin-right: 0.4rem;
+		margin-left: 0.4rem;
 	}
+
+	.button-div{
+		bottom: 1rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+
 }
 
 input::-webkit-input-placeholder,
@@ -353,8 +378,9 @@ textarea:hover {
 .success-nessage{
 	background-color: #3DA6F0;
 	color: var(--secondary);
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	padding-top: 1.3rem;
+	padding-bottom: 1.3rem;
+	margin-bottom: 1rem;
 	font-weight: 800;
 }
 
@@ -373,4 +399,8 @@ textarea:hover {
     position: absolute;
     z-index: 9999;
     animation: FadeIn 1.5s forwards;
+}
+
+.contact-icon{
+	filter: invert(55%) sepia(83%) saturate(1496%) hue-rotate(178deg) brightness(98%) contrast(91%);
 }

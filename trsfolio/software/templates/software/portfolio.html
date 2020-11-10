@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Software{% endblock title %}
+
+{% block libraries %}
+<!-- Stylesheet -->
+<link rel="stylesheet" href="{% static "css/navbar.css" %}">
+<link rel="stylesheet" href="{% static "css/software.css" %}">
+{% endblock libraries %}
+
+
+{% block content %}
+<div id="home">
+    {% include "includes/navbar.html" %}
+    <div class="content">
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="min-vh-100 text-center m-0 d-flex flex-column justify-content-center">
+                        <h1 class="mega-title">
+                            Victor Hugo Torres Rivera
+                        </h1>
+                        <h2 class="mega-subtitle">
+                            Computer Scientist & Software Engineer
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <article class="h-100">
+                <div class="container">
+                    
+                </div>
+            </article>
+            <article class="container">
+ 
+                <div class="col-12 p-0">
+                        <div class="equal min-vh-100 m-0 d-flex flex-column justify-content-center">
+                            <div class="row"> 
+                                <div class="col-md-6 align-self-center text-center">
+                                    <h3 class="project-title">Project Title</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/VTRS" target="blank">
+                                            <img class="contact-icon" src="{% static "img/icons/github.svg" %}" alt="github">
+                                        </a>
+                                        <a href="https://github.com/VTRS" target="blank">
+                                            <img class="contact-icon" src="{% static "img/icons/link.svg" %}" alt="github">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="project-description">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, vitae animi. Aut modi omnis, beatae, sint distinctio est esse dolorum dolorem saepe exercitationem odit eligendi dolores molestias similique. Vel, sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste ea quaerat dolore, atque eum molestiae magnam repellendus nam doloribus minima assumenda pariatur voluptatibus, consequuntur officia sit dignissimos! Distinctio, earum?
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                </div>
+
+            </div>
+            <div class="button-div text-center">
+                <button class="md-trigger fill" data-modal="modal-12">
+                    contact him
+                </button>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

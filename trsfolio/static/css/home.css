@@ -4,7 +4,8 @@
 }
 
 .dot {
-  background-color: var(--primary);
+  box-shadow: inset 0 0 0 0px var(--secondary);
+	color: var(--primary);
 }
 
 .mega-title{
@@ -28,6 +29,11 @@ footer{
 footer a{
 	color: #1C232E;
 	text-decoration: none;
+}
+
+footer a:hover{
+	color: #F53141;
+  text-decoration: none;
 }
 
 
