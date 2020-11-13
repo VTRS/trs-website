@@ -20,7 +20,7 @@
            <div class="series">
             <h3 class="series-title">title</h3>
                <div class="gallery">
-                    <div class="square">
+                    <div class="square" onclick="openModal('{% static "img/test/1.jpg" %}')">
                         <div class="image image--1" style="background-image: url({% static "img/test/1.jpg" %});"></div>
                         <div class="image image--2" style="background-image: url({% static "img/test/1.jpg" %});"></div>
                         <div class="image image--3" style="background-image: url({% static "img/test/1.jpg" %});"></div>
@@ -29,7 +29,7 @@
                         <div class="image image--6" style="background-image: url({% static "img/test/1.jpg" %});"></div>
                         <div class="image image--7" style="background-image: url({% static "img/test/1.jpg" %});"></div>
                     </div>
-                    <div class="square glitch" style="background-image: url({% static "img/test/2.jpg" %});"></div>
+                    <div class="square alt="sth" src="{% static "img/test/1.jpg" %}" glitch" style="background-image: url({% static "img/test/2.jpg" %});"></div>
                     <div class="square glitch" style="background-image: url({% static "img/test/3.jpg" %});"></div>
                     <div class="square glitch" style="background-image: url({% static "img/test/4.jpg" %});"></div>
                </div>
@@ -41,42 +41,48 @@
             </div>
         </main>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <!-- Modal Content (The Image) -->  
+        <img class="modal-content" id="img01">
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
 </div>
 {% endblock content %}
 
 {% block javascript %}
+<script src="{% static "js/modal.js" %}">
+
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementsByClassName("square");
+
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+</script>
 {% endblock javascript %}
-
-
-
-<!DOCTYPE html>
-<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
-<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="ru">
-<!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-  <title>Animation Glitch</title>
-  <meta name="description" content="Создание адаптивного сайта" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="shortcut icon" href="../../_common/images/favicon.png" />
-
-  <link rel="stylesheet" href="../../_common/css/reset.css" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <div class="ag-format-container">
-    <ul class="ag-glitch_list">
-      <li class="ag-glitch_item"></li>
-      <li class="ag-glitch_item"></li>
-      <li class="ag-glitch_item"></li>
-      <li class="ag-glitch_item"></li>
-      <li class="ag-glitch_item"></li>
-    </ul>
-  </div>
 

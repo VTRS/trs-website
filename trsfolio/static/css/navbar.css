@@ -83,7 +83,6 @@
 
 .nav__link.active{
 	color: var(--primary);
-	z-index: 500;
 }
 
 .nav__items .nav__link.active:after {
