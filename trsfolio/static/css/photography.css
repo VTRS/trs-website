@@ -1,0 +1,235 @@
+#home{
+    --primary: #F8F534;
+    color: var(--primary);
+}
+
+.dot {
+  border-color: var(--primary);
+	background-color: var(--primary);
+}
+
+.gallery{ 
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+}
+
+
+/* .square {
+  float:left;
+  position: relative;
+  width: 30%;
+  padding-bottom : 30%; 
+  margin: 0.3rem;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover; 
+} */
+
+.series-title{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+
+.square{
+  background-size: cover;
+  background-position: center center;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); /* Safari/Chrome */
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.gallery{
+
+  --content-width: 100vw;
+  
+
+  --gutter: 0.6rem;
+  
+
+  --columns: 3;
+  
+ 
+  --row-size: calc(
+    ( var(--content-width) - (var(--gutter) * (var(--columns) - 1))
+    ) / var(--columns)
+  );
+  
+  display: grid;
+
+  width: 100%;
+  max-width: var(--content-width);
+  
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-auto-rows: var(--row-size);
+
+  grid-column-gap: var(--gutter);
+  grid-row-gap: var(--gutter);
+
+}
+
+/* // This is again demo. Just decide with media queries when to add another column  */
+@media (min-width: 1200px){
+  .gallery{
+    --content-width: 100vw;
+    
+
+    --gutter: 0.6rem;
+    
+
+    --columns: 3;
+    
+    --margin: 8rem;
+    
+    --row-size: calc(
+      ( var(--content-width) - (var(--gutter) * (var(--columns) - 1)) - (var(--margin) * 2)
+      ) / var(--columns)
+    );
+    grid-auto-rows: calc(var(--row-size));
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+  }
+}
+
+
+.frame {
+  width: 360px;
+  height: 640px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.image {
+  width: inherit;
+  height: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
+
+.square:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+.image--2:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: overlay;
+  animation: blinking 0.3s ease-out infinite, glitch-anim-horizontal 3s linear infinite alternate;
+}
+.image--3:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  background-blend-mode: overlay;
+  animation: glitch-anim-horizontal 0.2s linear infinite alternate;
+}
+.image--4:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  background-blend-mode: overlay;
+  animation: glitch-anim-horizontal 0.4s ease infinite alternate;
+}
+.image--5:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  background-blend-mode: overlay;
+  clip-path: polygon(0 0, 0 1%, 100% 1%, 100% 0);
+  animation: blinking 0.2s linear infinite, glitch-anim-vertical 0.7s ease infinite alternate;
+}
+.image--6:hover {
+  background-color: white;
+  background-blend-mode: luminosity;
+  animation: blinking 0.5s linear infinite, glitch-anim-right 0.9s linear infinite;
+}
+.image--7:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
+  animation: blinking 0.3s 0.2s linear infinite, glitch-anim-left 0.8s linear infinite;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0.25;
+  }
+  70%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes glitch-anim-right {
+  to {
+    left: 8%;
+    top: -3%;
+  }
+}
+@keyframes glitch-anim-left {
+  to {
+    right: 8%;
+    bottom: -1%;
+  }
+}
+@keyframes glitch-anim-horizontal {
+  0% {
+    clip-path: polygon(0 0, 0 100%, 2% 100%, 2% 0);
+  }
+  10% {
+    clip-path: polygon(35% 0, 35% 100%, 37% 100%, 37% 0);
+  }
+  25% {
+    clip-path: polygon(25% 0, 25% 100%, 27% 100%, 27% 0);
+  }
+  40% {
+    clip-path: polygon(35% 0, 35% 100%, 37% 100%, 37% 0);
+  }
+  50% {
+    clip-path: polygon(75% 0, 75% 100%, 77% 100%, 77% 0);
+  }
+  60% {
+    clip-path: polygon(65% 0, 65% 100%, 67% 100%, 67% 0);
+  }
+  75% {
+    clip-path: polygon(35% 0, 35% 100%, 37% 100%, 37% 0);
+  }
+  85% {
+    clip-path: polygon(85% 0, 85% 100%, 87% 100%, 87% 0);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+}
+@keyframes glitch-anim-vertical {
+  0% {
+    clip-path: polygon(0 0, 0 1%, 100% 1%, 100% 0);
+  }
+  10% {
+    clip-path: polygon(0 20%, 0 21%, 100% 21%, 100% 20%);
+  }
+  25% {
+    clip-path: polygon(0 75%, 0 76%, 100% 76%, 100% 75%);
+  }
+  40% {
+    clip-path: polygon(0 40%, 0 41%, 100% 41%, 100% 40%);
+  }
+  50% {
+    clip-path: polygon(0 90%, 0 91%, 100% 91%, 100% 90%);
+  }
+  60% {
+    clip-path: polygon(0 80%, 0 85%, 100% 85%, 100% 80%);
+  }
+  75% {
+    clip-path: polygon(0 32%, 0 33%, 100% 33%, 100% 32%);
+  }
+  85% {
+    clip-path: polygon(0 65%, 0 66%, 100% 66%, 100% 65%);
+  }
+  100% {
+    clip-path: polygon(0 35%, 0 50%, 100% 50%, 100% 35%);
+  }
+}
+

@@ -1,1 +1,82 @@
-<h1>Hello</h1>
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Photography{% endblock title %}
+
+{% block libraries %}
+<!-- Stylesheet -->
+<link rel="stylesheet" href="{% static "css/navbar.css" %}">
+<link rel="stylesheet" href="{% static "css/photography.css" %}">
+<link rel="stylesheet" href="{% static "css/glitch-effect.css" %}">
+{% endblock libraries %}
+
+
+{% block content %}
+<div id="home">
+    {% include "includes/navbar.html" %}
+    <div class="content">
+       <main>
+           <div class="series">
+            <h3 class="series-title">title</h3>
+               <div class="gallery">
+                    <div class="square">
+                        <div class="image image--1" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                        <div class="image image--2" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                        <div class="image image--3" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                        <div class="image image--4" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                        <div class="image image--5" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                        <div class="image image--6" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                        <div class="image image--7" style="background-image: url({% static "img/test/1.jpg" %});"></div>
+                    </div>
+                    <div class="square glitch" style="background-image: url({% static "img/test/2.jpg" %});"></div>
+                    <div class="square glitch" style="background-image: url({% static "img/test/3.jpg" %});"></div>
+                    <div class="square glitch" style="background-image: url({% static "img/test/4.jpg" %});"></div>
+               </div>
+           </div>
+            <div class="button-div text-center">
+                <button class="md-trigger fill" data-modal="modal-12">
+                    contact him
+                </button>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>Animation Glitch</title>
+  <meta name="description" content="Создание адаптивного сайта" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="../../_common/images/favicon.png" />
+
+  <link rel="stylesheet" href="../../_common/css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="ag-format-container">
+    <ul class="ag-glitch_list">
+      <li class="ag-glitch_item"></li>
+      <li class="ag-glitch_item"></li>
+      <li class="ag-glitch_item"></li>
+      <li class="ag-glitch_item"></li>
+      <li class="ag-glitch_item"></li>
+    </ul>
+  </div>
+
