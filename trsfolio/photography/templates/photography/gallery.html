@@ -8,7 +8,9 @@
 <!-- Stylesheet -->
 <link rel="stylesheet" href="{% static "css/navbar.css" %}">
 <link rel="stylesheet" href="{% static "css/photography.css" %}">
-<link rel="stylesheet" href="{% static "css/glitch-effect.css" %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous"></script>
 {% endblock libraries %}
 
 
@@ -20,16 +22,16 @@
            <div class="series">
             <h3 class="series-title">title</h3>
                <div class="gallery">
-                    <div class="square" onclick="openModal('{% static "img/test/1.jpg" %}')">
-                        <div class="image image--1" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                        <div class="image image--2" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                        <div class="image image--3" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                        <div class="image image--4" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                        <div class="image image--5" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                        <div class="image image--6" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                        <div class="image image--7" style="background-image: url({% static "img/test/1.jpg" %});"></div>
-                    </div>
-                    <div class="square alt="sth" src="{% static "img/test/1.jpg" %}" glitch" style="background-image: url({% static "img/test/2.jpg" %});"></div>
+
+                    <a href="{% static 'img/test/1.jpg' %}" data-toggle="lightbox" data-gallery="gallery">
+                        <div 
+                            class="square glitch" 
+                            style="background-image: url({% static "img/test/1.jpg" %});"
+                            alt="Thumbnail"
+                        ></div>
+                    </a>
+
+                    <div class="square glitch" style="background-image: url({% static "img/test/2.jpg" %});"></div>
                     <div class="square glitch" style="background-image: url({% static "img/test/3.jpg" %});"></div>
                     <div class="square glitch" style="background-image: url({% static "img/test/4.jpg" %});"></div>
                </div>
@@ -49,7 +51,7 @@
         <span class="close" onclick="closeModal()">&times;</span>
 
         <!-- Modal Content (The Image) -->  
-        <img class="modal-content" id="img01">
+        <img class="modal-content img-fluid" id="img01">
         <!-- Modal Caption (Image Text) -->
         <div id="caption"></div>
     </div>
@@ -57,8 +59,11 @@
 {% endblock content %}
 
 {% block javascript %}
-<script src="{% static "js/modal.js" %}">
-
-</script>
+   <script>
+       $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+   </script>
 {% endblock javascript %}
 
