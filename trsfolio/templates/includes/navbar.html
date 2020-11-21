@@ -15,7 +15,7 @@
                 class="nav__link {% if 'photography' in request.path %}active{% endif %}" 
                 data-hover="PHOTOGRAPHY">PHOTOGRAPHY</a></li>
             <li class="nav__item"><a 
-                href="" 
+                href="{% url 'music:discography' %}" 
                 class="nav__link {% if 'music' in request.path %}active{% endif %}" 
                 data-hover="MUSIC">MUSIC</a></li>
 		</ul>

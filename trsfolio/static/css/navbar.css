@@ -28,7 +28,7 @@
 .navb {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
-	background-color: var(--secondary);
+	background-color: transparent;
 }
 
 .hidden {

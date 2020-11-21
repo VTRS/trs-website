@@ -30,38 +30,54 @@
             </div>
         </header>
         <main>
-            <article class="h-100">
-                <div class="container">
-                    
-                </div>
-            </article>
-            <article class="container">
- 
-                <div class="col-12 p-0">
+
+            {% for project in projects %}
+                <article class="container">
+                    <div class="col-12 p-0">
                         <div class="equal min-vh-100 m-0 d-flex flex-column justify-content-center">
                             <div class="row"> 
                                 <div class="col-md-6 align-self-center text-center">
-                                    <h3 class="project-title">Project Title</h3>
+                                    <h3 class="project-title">{{ project.name }}</h3>
                                     <div class="project-links">
-                                        <a href="https://github.com/VTRS" target="blank">
-                                            <img class="contact-icon" src="{% static "img/icons/github.svg" %}" alt="github">
-                                        </a>
-                                        <a href="https://github.com/VTRS" target="blank">
-                                            <img class="contact-icon" src="{% static "img/icons/link.svg" %}" alt="github">
-                                        </a>
+                                        
+                                        {% if project.github %}
+                                            <a href="{{ project.github }}" target="blank">
+                                                <img class="contact-icon" src="{% static "img/icons/github.svg" %}" alt="github">
+                                            </a>
+                                        {% endif %}
+                                        
+                                        
+                                        {% if project.link %}
+                                            <a href="{{ project.link }}" target="blank">
+                                                <img class="contact-icon" src="{% static "img/icons/link.svg" %}" alt="link">
+                                            </a>
+                                        {% endif %}
+                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="project-description">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, vitae animi. Aut modi omnis, beatae, sint distinctio est esse dolorum dolorem saepe exercitationem odit eligendi dolores molestias similique. Vel, sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste ea quaerat dolore, atque eum molestiae magnam repellendus nam doloribus minima assumenda pariatur voluptatibus, consequuntur officia sit dignissimos! Distinctio, earum?
+                                        {{ project.description|linebreaks }}
+                                    </div>
+                                    <div class="tags">
+                                        <p>
+                                            Technology Stack:
+                                            <br>
+                                            {% for tag in  project.tags.all %}
+                                                <span>
+                                                    {{ tag }}
+                                                </span>
+                                            {% endfor %}
+                                                
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                                
+                            </div>   
                         </div>
-                </div>
+                    </div>          
+                </article>
+            {% endfor %}
 
-            </div>
             <div class="button-div text-center">
                 <button class="md-trigger fill" data-modal="modal-12">
                     contact him

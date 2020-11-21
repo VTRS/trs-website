@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     #apps
     'shared',
     'software',
-    'photography'
+    'photography',
+    'music'
 ]
 
 MIDDLEWARE = [

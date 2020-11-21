@@ -6,8 +6,8 @@ from django.core.validators import URLValidator
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    github = models.TextField(validators=[URLValidator()])
-    link = models.TextField(validators=[URLValidator()])
+    github = models.CharField(max_length=500, validators=[URLValidator()])
+    link = models.CharField(max_length=500, validators=[URLValidator()])
     tags = TaggableManager()
 
     def __str__(self):
