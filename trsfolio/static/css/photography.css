@@ -1,0 +1,100 @@
+#home{
+    --primary: #F8F534;
+    color: var(--primary);
+}
+
+.modal-body{
+  background-color: #F8F534;
+}
+
+.coverdiv {
+  background-color: #F8F534;
+}
+
+.dot {
+  border-color: var(--primary);
+	background-color: var(--primary);
+}
+
+.gallery{ 
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+}
+
+.series-title{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+
+.square{
+  background-size: cover;
+  background-position: center center;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); /* Safari/Chrome */
+  transition: all 0.7s ease-in-out;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery{
+
+  --content-width: 100vw;
+  
+
+  --gutter: 0.6rem;
+  
+
+  --columns: 3;
+  
+ 
+  --row-size: calc(
+    ( var(--content-width) - (var(--gutter) * (var(--columns) - 1))
+    ) / var(--columns)
+  );
+  
+  display: grid;
+
+  width: 100%;
+  max-width: var(--content-width);
+  
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-auto-rows: var(--row-size);
+
+  grid-column-gap: var(--gutter);
+  grid-row-gap: var(--gutter);
+
+}
+
+/* // This is again demo. Just decide with media queries when to add another column  */
+@media (min-width: 1200px){
+  .gallery{
+    --content-width: 100vw;
+    
+
+    --gutter: 0.6rem;
+    
+
+    --columns: 3;
+    
+    --margin: 8rem;
+    
+    --row-size: calc(
+      ( var(--content-width) - (var(--gutter) * (var(--columns) - 1)) - (var(--margin) * 2)
+      ) / var(--columns)
+    );
+    grid-auto-rows: calc(var(--row-size));
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+  }
+}
+
+.square:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+

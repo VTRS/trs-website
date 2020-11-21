@@ -133,3 +133,6 @@ dmypy.json
 
 # XD files
 *.xd
+
+# Local media
+media/
