@@ -5,7 +5,7 @@ with open('/etc/secret_key.txt') as f:
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['DOMINIO', 'IP']
+ALLOWED_HOSTS = ['hugotrs.com', '68.183.46.49']
 
 with open('/etc/postgres_password.txt') as f:
     postgres_pwd = f.read().strip()
@@ -14,7 +14,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'trsfolio',
-        'USER': 'trsfolio',
+        'USER': 'trs',
         'PASSWORD': postgres_pwd,
         'HOST': '127.0.0.1',
         'PORT': '5432',
