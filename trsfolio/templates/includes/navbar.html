@@ -1,0 +1,23 @@
+<nav class="navb">
+    <div class="circle">
+        <a href="{% url 'shared:home' %}" class="nav__link"><span class="dot"></span></a>
+    </div>
+	<input type="checkbox" id="nav" class="hidden" />
+	<label for="nav" class="nav__open"><i></i><i></i><i></i></label>
+	<div class="nav">
+		<ul class="nav__items">
+            <li class="nav__item"><a 
+                href="{% url 'software:portfolio' %}" 
+                class="nav__link {% if 'software' in request.path %}active{% endif %}" 
+                data-hover="SOFTWARE">SOFTWARE</a></li>
+            <li class="nav__item"><a 
+                href="{% url 'photography:gallery' %}" 
+                class="nav__link {% if 'photography' in request.path %}active{% endif %}" 
+                data-hover="PHOTOGRAPHY">PHOTOGRAPHY</a></li>
+            <li class="nav__item"><a 
+                href="{% url 'music:discography' %}" 
+                class="nav__link {% if 'music' in request.path %}active{% endif %}" 
+                data-hover="MUSIC">MUSIC</a></li>
+		</ul>
+	</div>
+</nav>
