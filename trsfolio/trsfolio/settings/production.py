@@ -32,7 +32,7 @@ with open('/etc/email_password.txt') as f:
     EMAIL_HOST_PASSWORD = f.read().strip()
 
 EMAIL_HOST = 'smtp.ionos.mx'
-EMAIL_HOST_USER = 'spam@hugotrs.com'
+EMAIL_HOST_USER = 'robot@hugotrs.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'spam@hugotrs.com'
+DEFAULT_FROM_EMAIL = 'robot@hugotrs.com'
