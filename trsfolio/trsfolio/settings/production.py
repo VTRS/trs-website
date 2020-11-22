@@ -21,12 +21,6 @@ DATABASES = {
     }
 }
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
 # Email
 with open('/etc/email_password.txt') as f:
     EMAIL_HOST_PASSWORD = f.read().strip()

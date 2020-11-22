@@ -22,12 +22,3 @@ DATABASES = {
 }
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
