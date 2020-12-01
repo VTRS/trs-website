@@ -4,10 +4,10 @@ from django.db import models
 def get_upload_path(instance, filename):
     model = instance.album.name
     name = model.replace(' ', '_')
-    return f'/images/{name}/{filename}'
+    return f'/images/{name}'
 
 def get_upload_track_path(instance, filename):
-    return f'files/{filename}'
+    return f'files'
 
 class Album(models.Model):
     name = models.CharField(max_length=50)
