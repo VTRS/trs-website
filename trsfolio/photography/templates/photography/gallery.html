@@ -27,8 +27,14 @@
                     {% for image in serie.album.images.all %}
                         <a href="{{ image.image.url }}" data-toggle="lightbox" data-gallery="gallery">
                             <div 
-                                class="square glitch" 
-                                style="background-image: url({{ image.thumbnail.url }});"
+                                class="square glitch"
+                                
+                                {% if image.thumbnail %}
+                                    style="background-image: url({{ image.thumbnail.url }});"
+                                {% else %}
+                                    style="background-image: url({{ image.image.url }});"
+                                {% endif %}
+                                    
                                 alt="Thumbnail"
                             ></div>
                         </a>
