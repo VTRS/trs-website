@@ -12,7 +12,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images')
     thumbnail = models.ImageField(upload_to='images', null=True, blank=True)
     default = models.BooleanField(default=False)
-    album = models.ForeignKey(Album, related_name='images', on_delete=models.CASCADE)
+    album = models.ForeignKey(Album, related_name='images', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name

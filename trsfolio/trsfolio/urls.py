@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('shared.urls', namespace='shared')),
     path('software/', include('software.urls', namespace='software')),
     path('photography/', include('photography.urls', namespace='photography')),
-    path('music/', include('music.urls', namespace='music'))
+    path('music/', include('music.urls', namespace='music')),
+    path('secret/', include('secret.urls', namespace='secret'))
 ]

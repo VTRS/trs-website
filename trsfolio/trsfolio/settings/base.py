@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'shared',
     'software',
     'photography',
-    'music'
+    'music',
+    'secret'
 ]
 
 MIDDLEWARE = [

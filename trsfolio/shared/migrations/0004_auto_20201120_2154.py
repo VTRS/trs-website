@@ -22,6 +22,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='image',
             name='thumbnail',
-            field=models.ImageField(blank=True, null=True, upload_to=shared.models.get_upload_path),
+            field=models.ImageField(blank=True, null=True, upload_to='images'),
         ),
     ]
