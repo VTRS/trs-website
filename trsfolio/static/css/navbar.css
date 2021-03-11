@@ -81,6 +81,10 @@
     text-decoration: none;
 }
 
+.beta{
+	font-size: 0.9ffrem;
+}
+
 .nav__link.active{
 	color: var(--primary);
 }
