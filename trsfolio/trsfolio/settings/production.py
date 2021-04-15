@@ -3,7 +3,7 @@ from trsfolio.settings.base import *
 with open('/etc/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['hugotrs.com', '208.68.37.218']
 
