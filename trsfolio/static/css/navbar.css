@@ -25,6 +25,11 @@
     left: 0.8rem;
 }
 
+.circle a:hover{
+	text-decoration: none;
+	color: var(--primary);
+}
+
 .navb {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
@@ -79,6 +84,15 @@
         0 -0.06rem var(--primary);
     letter-spacing: -0.02rem;
     text-decoration: none;
+}
+
+.beta{
+	font-size: 0.9ffrem;
+}
+
+.beta:hover{
+	text-decoration: none;
+	color: var(--primary);
 }
 
 .nav__link.active{
