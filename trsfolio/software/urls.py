@@ -6,5 +6,5 @@ from django.conf.urls.static import static
 app_name = 'software'
 urlpatterns = [
     path('', views.portfolio, name='portfolio'),
-    path('project_detail//<int:project_id>', views.project_detail, name='project_detail')
+    path('project_detail/<int:project_id>', views.project_detail, name='project_detail')
 ]
