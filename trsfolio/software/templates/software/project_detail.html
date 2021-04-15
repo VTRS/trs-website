@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Software{% endblock title %}
+
+{% block libraries %}
+<!-- Stylesheet -->
+<link rel="stylesheet" href="{% static "css/navbar.css" %}">
+<link rel="stylesheet" href="{% static "css/software.css" %}">
+{% endblock libraries %}
+
+
+{% block content %}
+<div id="home">
+    {% include "includes/navbar.html" %}
+    <div class="detail-content">
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="text-center m-0 d-flex flex-column justify-content-center">
+                        <h1 class="mega-title">
+                            {{ project.name }}
+                        </h1>
+
+                        <div class="project-links">
+                                        
+                            {% if project.github %}
+                                <a href="{{ project.github }}" target="blank">
+                                    <img class="contact-icon" src="{% static "img/icons/github.svg" %}" alt="github">
+                                </a>
+                            {% endif %}
+                            
+                            
+                            {% if project.link %}
+                                <a href="{{ project.link }}" target="blank">
+                                    <img class="contact-icon" src="{% static "img/icons/link.svg" %}" alt="link">
+                                </a>
+                            {% endif %}
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class='project_details'>
+            <div class="container">
+                <section>
+                    <h3 class="subtitle">::Description</h3>
+                    <div class="project-description">
+                        {{ project.description|linebreaks }}
+                    </div>
+                </section>
+                <section>
+                    <h3 class="subtitle">::Screenshots</h3>
+                    <div class="screenshots custom-row">
+                        
+                        {% for column in screenshots %}
+                            
+                            <div class="custom-column">
+                                
+                                {% for image in column %}
+                                    {{image.name}}
+                                    <img src="{{ image.image.url }}" alt="">
+                                    
+                                {% endfor %}
+                                    
+                            </div>
+                            
+                        {% endfor %}
+                            
+                    </div>
+                </section>     
+                <section>
+                    <h3 class="subtitle">::For my fellow nerds</h3>
+                    <div class="technical_description">
+                        {{ project.projectdetails.technical_description|linebreaks }}
+                    </div>
+                </section>   
+                <section>
+                    <h3 class="subtitle">::Contributions</h3>
+                    <div class="contributions">
+                        {{ project.projectdetails.contributions|linebreaks }}
+                    </div>
+                </section>
+                <section>
+                    <h3 class="subtitle">::Collaborators</h3>
+                    <div class="collaborators">
+                        <ul>
+
+                        </ul>
+                        {% for collaborator in project.projectdetails.collaborators.all  %}
+                            <li>
+                                {{collaborator.name}} : {{collaborator.roles}}                                   
+                            </li> 
+                        {% endfor %}
+                            
+                    </div>
+                </section>        
+            </div>
+            
+        </main>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

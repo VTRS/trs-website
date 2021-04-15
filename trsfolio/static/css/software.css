@@ -43,6 +43,10 @@
       0 -0.06rem var(--primary);
 }
 
+.detail-content{
+  margin-top: 12rem;
+}
+
 @supports (-webkit-text-stroke: 0.06rem var(--primary)) {
 	.mega-subtitle{
 		text-shadow: 
@@ -59,9 +63,28 @@
   font-weight: 800;
 }
 
+.project-title a{
+  color: var(--primary);
+}
+
+.project-title a:hover{
+  text-decoration: none;
+}
+
 .project-links{
   filter: invert(68%) sepia(97%) saturate(296%) hue-rotate(79deg) brightness(96%) contrast(105%);
 }
+
+.project-description a{
+  color: var(--primary);
+  text-align: right !important;
+}
+
+.project-description a:hover{
+  text-decoration: solid;
+}
+
+
 
 button {
 	color: #4CF37C;
@@ -89,5 +112,40 @@ button {
 @media screen and (min-width: 1000px) {
   .mega-title{
     margin-top: -15rem;
+  }
+}
+
+.custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.custom-column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.custom-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .custom-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .custom-column {
+    flex: 100%;
+    max-width: 100%;
   }
 }

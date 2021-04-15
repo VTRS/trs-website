@@ -6,8 +6,6 @@ SECRET_KEY = '($rng7_zh-w#c5lgfkzes&y+2&vwlc-plb0a@p@8z1e0f32o1b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 DATABASES = {

@@ -22,15 +22,19 @@ class Collaborators(models.Model):
     def __str__(self):
         return self.name
     
-class Project_Details(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+class ProjectDetails(models.Model):
+    project =  models.OneToOneField(
+        Project,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
     release_date = models.CharField(max_length=8)
     status = models.CharField(max_length=50)
     screenshots = models.ForeignKey(Album, on_delete=models.CASCADE)
     technical_description = models.TextField()
     contributions = models.TextField()
-    collaborators = models.ManyToManyField(Collaborators)
+    collaborators = models.ManyToManyField(Collaborators, blank=True)
 
     def __str__(self):
-        return self.project
+        return self.project.name
     
