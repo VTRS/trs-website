@@ -16,7 +16,7 @@ html {
 
 button {
 	position: relative;
-	padding: 1rem 1rem;
+	padding: 0.5rem 1rem;
 	color: var(--primary);
 	font-weight: 700;
 	border: 0.01rem var(--primary) solid;
@@ -187,7 +187,7 @@ h3 {
 	}
 
 	.content{
-		margin-top: 3rem;
+		margin-top: 0.8rem;
 	}
 
 }

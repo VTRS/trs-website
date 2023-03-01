@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block libraries %}
+<!-- Stylesheet -->
+<link rel="stylesheet" href="{% static "css/links.css" %}">
+{% endblock libraries %}
+
+
+{% block content %}
+<div id="home">
+    <div class="content ps-5 pe-5">
+        <h1 class="mega-title">Links</h1>
+        <div class="row justify-content-center my-3">
+            <a href="{% url "music:events" %}" class="link-item">
+                <i class="bi bi-boombox"></i>&nbsp;&nbsp;Live set dates
+            </a>  
+        </div>
+        <div class="row justify-content-center my-5">
+            <a href="{% url "shared:home" %}" class="link-item">
+                    <i class="bi bi-link-45deg"></i>&nbsp;&nbsp;Website
+            </a>  
+        </div>
+        
+
+
+        {% for link in links  %}
+        <div class="row justify-content-center my-5">
+            <a href="{{ link.url }}" class="link-item text-start" target="_blank">
+                <i class="bi bi-{{ link.icon }}"></i>&nbsp;&nbsp;{{ link.name }}
+            </a>
+        </div>
+                
+               
+        {% endfor %}
+    </div>
+    
+    
+    
+        
+</div>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-6"><a href="{% url 'shared:terms' %}" target="blank">Terms and Conditions</a></div>
+        <div class="col-6 text-right">trs © 2021</div>
+    </div>
+</footer>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

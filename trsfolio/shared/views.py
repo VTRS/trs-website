@@ -2,10 +2,15 @@ from django.core.mail import send_mail
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponse
+from .models import *
 
 # Create your views here.
 def home(request):    
     return render(request, 'shared/home.html')
+
+def links(request):
+    links = Link.objects.all()
+    return render(request, 'shared/links.html', {'links': links})
 
 def terms(request):
     return render(request, 'shared/terms.html')

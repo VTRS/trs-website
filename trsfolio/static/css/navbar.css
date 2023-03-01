@@ -1,7 +1,7 @@
 /* -----------------Nabar-----------------  */
 .dot {
-    height: 2.7rem;
-    width: 2.7rem;
+    height: 2.3rem;
+    width: 2.3rem;
     border-width: 0.1rem;
 	border-color: var(--primary);
 	background-color: var(--primary);
@@ -65,7 +65,7 @@
 .nav__items .nav__link{
     color: var(--secondary);
     position: relative;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     text-shadow: 
         -0.06rem 0 var(--primary), 
@@ -220,7 +220,7 @@
 		padding: 10px 25px;
 		opacity: 0;
         color: var(--secondary);
-		font-size: 2.5rem;
+		font-size: 2rem;
 		font-weight: 800;
 		transform: translateY(-20px);
         transition: all 0.2s ease;

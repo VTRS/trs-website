@@ -23,3 +23,6 @@ class EpAdmin(admin.ModelAdmin):
 class SongAdmin(admin.ModelAdmin):
     pass
 
+admin.site.register(Venue)
+admin.site.register(Event)
+

@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}TRS Live Sets{% endblock title %}
+
+{% block libraries %}
+<!-- Stylesheet -->
+<link rel="stylesheet" href="{% static "css/music.css" %}">
+<script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>   
+
+{% endblock libraries %}
+
+
+{% block content %}
+<div id="home">
+    <div class="content ps-xl-5 pe-xl-5">
+       <main class="">
+            <h1 class="mega-title">Eventos</h1>
+            
+            {% for event in events %}
+
+                <div class="row">
+                    <div class="col-12 col-xl-3 text-xl-start text-center align-self-center">
+                        <add-to-calendar-button
+                            styleLight="
+                                --date-btn-background: #694BE4;
+                                --btn-background-hover:#694BE4;
+                                --date-btn-text: #161C2C;
+                                --list-background: #694BE4;
+                                --list-background-hover: #8269e6;
+                                --date-btn-cal-background: 694BE4;
+                                --date-btn-cal-day-text: #161C2C;
+                                --date-btn-cal-month-text: #161C2C;
+                                
+                            "
+                            styleDark="
+                                --date-btn-background: #694BE4;
+                                --btn-background-hover:#694BE4;
+                                --date-btn-text: #161C2C;
+                                --list-background: #694BE4;
+                                --list-background-hover: #8269e6;
+                                --date-btn-cal-background: 694BE4;
+                                --date-btn-cal-day-text: #161C2C;
+                                --date-btn-cal-month-text: #161C2C;
+                            " 
+                            name="TRS Livset"
+                            startDate="{{ event.date|date:"Y-m-d" }}"
+                            startTime="{{ event.date|time:"H:i" }}"
+                            endTime="{{ event.date|time:"H:i" }}"
+                            options="'Apple','Google','Outlook.com'"
+                            buttonStyle="date"
+                            hideBackground
+                            hideCheckmark
+                            size="6"
+                            inline
+                            label="Add to Calendar"
+                            lightMode="bodyScheme"
+                            timeZone="currentBrowser"
+                        ></add-to-calendar-button>
+                    </div>
+                    <div class="col-12 col-xl-6 text-center align-self-center">
+                        <span class="font-weight-bold">{{ event.name }}</span>
+                        <br>
+                        <i class="bi bi-geo-fill"></i>
+                        <a target="_blank" href="{{event.venue.maps}}">
+                            {{ event.venue.name }}
+                            ({{ event.venue.address }})
+                        </a>
+                    </div>
+                    <div class="col-12 col-xl-3 text-center text-xl-end align-self-center">
+                        {% if event.venue.instagram %}
+                            <a target="_blank" href="{{event.venue.instagram}}">
+                                <i class="bi bi-instagram"></i> {{ event.venue.name }}
+                            </a>
+                        {% endif %}
+
+                        {% if event.venue.website %}
+                            <br class="d-none d-xl-block">
+                            &nbsp;&nbsp;
+                            <a target="_blank" href="{{event.venue.website}}">
+                                <i class="bi bi-link-45deg"></i>{{ event.venue.name }}
+                            </a>
+                        {% endif %}
+                        
+
+                        {% if event.instagram %}
+                            <br class="d-none d-xl-block">
+                            &nbsp;&nbsp;    
+                            <a target="_blank" href="{{event.instagram}}">
+                                <i class="bi bi-instagram"></i> Evento
+                            </a>
+                        {% endif %}
+
+                        
+                        {% if event.website %}
+                            <br class="d-none d-xl-block">
+                            &nbsp;&nbsp;
+                            <a target="_blank" href="{{event.website}}">
+                                <i class="bi bi-link-45deg"></i>Evento
+                            </a>
+                            
+                        {% endif %}
+                            
+                            
+                    </div>
+                </div>
+
+
+
+                
+            {% endfor %}
+            
+        </main>
+    </div>
+    <div class="button-div text-center">
+        <button class="md-trigger fill" data-modal="modal-12">
+            contact them
+        </button>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src="{% static 'js/media-player.js' %}"></script>
+<script>
+</script>
+{% endblock javascript %}
+

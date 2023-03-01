@@ -26,3 +26,5 @@ class ImageAdmin(admin.ModelAdmin):
 @admin.register(File)
 class FileAdmin(admin.ModelAdmin):
     pass
+
+admin.site.register(Link)

@@ -24,5 +24,4 @@ urlpatterns = [
     path('photography/', include('photography.urls', namespace='photography')),
     path('music/', include('music.urls', namespace='music')),
     path('secret/', include('secret.urls', namespace='secret')),
-    path("error_test/", TemplateView.as_view(template_name='500.html'))
 ]
