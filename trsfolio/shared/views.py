@@ -25,8 +25,8 @@ def contact(request):
                 send_mail(
                     subject = name + ' is trying to reach you',
                     message = 'Name: ' + name + '<br>Contact' + contact + '<br>Messsage: ' + message,
-                    from_email = 'Contact Form hugotrs.com <spam@hugotrs.com>',
-                    recipient_list = ['hi@hugotrs.com'],
+                    from_email = 'Contact Form victrs.art <contact@victrs.art>',
+                    recipient_list = ['vic@victrs.art'],
                 )
                 return HttpResponse("thanks for your message, he will be in touch as soon as possible")
             except BadHeaderError:
