@@ -1,5 +1,5 @@
 #home{
-    --primary: #815CFF;
+    --primary: #FE579A;
     color: var(--primary)
 }
 
@@ -7,6 +7,10 @@
     font-weight: 900;
     font-size: 3rem;
     text-align: center;
+}
+
+.coverdiv {
+    background-color: #FE579A;
 }
 
 .link-item {
