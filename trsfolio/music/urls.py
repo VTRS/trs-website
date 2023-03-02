@@ -7,4 +7,4 @@ app_name = 'music'
 urlpatterns = [
     path('', views.discography, name='discography'),
     path('events', views.events, name='events')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
