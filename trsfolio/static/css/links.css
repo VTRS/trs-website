@@ -1,0 +1,66 @@
+#home{
+    --primary: #FE579A;
+    color: var(--primary)
+}
+
+.mega-title{
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.coverdiv {
+    background-color: #FE579A;
+}
+
+.link-item {
+	padding: 0.5rem 4rem;
+    width: 90vw;
+    text-decoration: none;
+	color: var(--primary);
+	font-weight: 600;
+	border: 0.01rem var(--primary) solid;
+	border-radius: 4px;
+	outline: 0;
+	background-color: var(--secondary);
+	z-index: 1;
+	cursor: pointer;
+	transition:         0.08s ease-in;
+	-o-transition:      0.08s ease-in;
+	-ms-transition:     0.08s ease-in;
+	-moz-transition:    0.08s ease-in;
+	-webkit-transition: 0.08s ease-in;
+}
+
+.link-item:hover {
+	color: var(--secondary);
+    background-color: var(--primary);
+    transition:         0.14s ease-in;
+	-o-transition:      0.14s ease-in;
+	-ms-transition:     0.14s ease-in;
+	-moz-transition:    0.14s ease-in;
+	-webkit-transition: 0.14s ease-in;
+}
+
+@media screen and (min-width: 1000px) {
+	.link-item{
+        width: 30vw;
+    }
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	padding-left: 1rem;
+  padding-right: 1rem;
+  color: #1C232E;
+}
+footer a{
+	color: #1C232E;
+	text-decoration: none;
+}
+
+footer a:hover{
+	color: var(--primary);
+  text-decoration: none;
+}

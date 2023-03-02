@@ -3,6 +3,17 @@
     color: var(--primary);
 }
 
+.mega-title{
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
 .coverdiv {
     background-color: #694BE4;
 }

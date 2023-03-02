@@ -5,7 +5,7 @@ with open('/etc/secret_key.txt') as f:
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['hugotrs.com', '208.68.37.218']
+ALLOWED_HOSTS = ['victrs.art', '208.68.37.218']
 
 with open('/etc/postgres_password.txt') as f:
     postgres_pwd = f.read().strip()

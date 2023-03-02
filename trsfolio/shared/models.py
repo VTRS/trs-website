@@ -5,6 +5,14 @@ class Album(models.Model):
     
     def __str__(self):
         return self.name
+
+class Link(models.Model):
+    name = models.CharField(max_length=50)
+    url = models.URLField()
+    icon = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
     
     
 class Image(models.Model):
