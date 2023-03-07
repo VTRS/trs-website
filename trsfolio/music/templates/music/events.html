@@ -46,7 +46,7 @@
                             name="TRS Live Set"
                             startDate="{{ event.date|date:"Y-m-d" }}"
                             startTime="{{ event.date|time:"H:i" }}"
-                            endTime="{{ event.date|time:"H:i" }}"
+                            endTime="{{ event.end_date|time:"H:i" }}"
                             options="'Apple','Google','Outlook.com'"
                             buttonStyle="date"
                             hideBackground
@@ -148,7 +148,7 @@
                             name="TRS Live Set"
                             startDate="{{ event.date|date:"Y-m-d" }}"
                             startTime="{{ event.date|time:"H:i" }}"
-                            endTime="{{ event.date|time:"H:i" }}"
+                            endTime="{{ event.end_date|time:"H:i" }}"
                             options="'Apple','Google','Outlook.com'"
                             buttonStyle="date"
                             hideBackground
