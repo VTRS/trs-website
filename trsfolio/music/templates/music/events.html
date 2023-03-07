@@ -102,11 +102,107 @@
                             
                     </div>
                 </div>
+            {% endfor %}
 
-
+            
+            {% for event in past_events  %}
 
                 
+                {% if forloop.first %}
+                    <h3 class="text-center mt-5 opacity-50">Eventos Pasados</h3>
+                {% endif %}
+
+                <div class="row my-3 opacity-50">
+                    <div class="col-12 col-xl-3 text-xl-start text-center align-self-center past-event">
+                        <add-to-calendar-button
+                            styleLight="
+                                --date-btn-background: #694BE4;
+                                --btn-background-hover:#694BE4;
+                                --date-btn-text: #161C2C;
+                                --list-background: #694BE4;
+                                --list-background-hover: #8269e6;
+                                --date-btn-cal-background: 694BE4;
+                                --date-btn-cal-day-text: #161C2C;
+                                --date-btn-cal-month-text: #161C2C;
+                                
+                            "
+                            styleDark="
+                                --date-btn-background: #694BE4;
+                                --btn-background-hover:#694BE4;
+                                --date-btn-text: #161C2C;
+                                --list-background: #694BE4;
+                                --list-background-hover: #8269e6;
+                                --date-btn-cal-background: 694BE4;
+                                --date-btn-cal-day-text: #161C2C;
+                                --date-btn-cal-month-text: #161C2C;
+                            " 
+                            name="TRS Live Set"
+                            startDate="{{ event.date|date:"Y-m-d" }}"
+                            startTime="{{ event.date|time:"H:i" }}"
+                            endTime="{{ event.date|time:"H:i" }}"
+                            options="'Apple','Google','Outlook.com'"
+                            buttonStyle="date"
+                            hideBackground
+                            hideCheckmark
+                            size="6"
+                            inline
+                            label="Add to Calendar"
+                            lightMode="bodyScheme"
+                            timeZone="currentBrowser"
+                        ></add-to-calendar-button>
+                    </div>
+                    <div class="col-12 col-xl-6 text-center align-self-center">
+                        <span class="font-weight-bold">{{ event.name }}</span>
+                        <br>
+                        <i class="bi bi-geo-fill"></i>
+                        <a target="_blank" href="{{event.venue.maps}}">
+                            {{ event.venue.name }}
+                            ({{ event.venue.address }})
+                        </a>
+                    </div>
+                    <div class="col-12 col-xl-3 text-center text-xl-end align-self-center">
+                        {% if event.venue.instagram %}
+                            <a target="_blank" href="{{event.venue.instagram}}">
+                                <i class="bi bi-instagram"></i> {{ event.venue.name }}
+                            </a>
+                        {% endif %}
+
+                        {% if event.venue.website %}
+                            &nbsp;&nbsp;
+                            <a target="_blank" href="{{event.venue.website}}">
+                                <i class="bi bi-link-45deg"></i>{{ event.venue.name }}
+                            </a>
+                        {% endif %}
+                        
+
+                        {% if event.instagram %}
+                            <br class="d-none d-xl-block">
+                            &nbsp;&nbsp;    
+                            <a target="_blank" href="{{event.instagram}}">
+                                <i class="bi bi-instagram"></i> Evento
+                            </a>
+                        {% endif %}
+
+                        
+                        {% if event.website %}
+                            &nbsp;&nbsp;
+                            <a target="_blank" href="{{event.website}}">
+                                <i class="bi bi-link-45deg"></i>Evento
+                            </a>
+                            
+                        {% endif %}
+                            
+                            
+                    </div>
+                </div>
+                    
+                
             {% endfor %}
+                
+
+
+        
+                
             
         </main>
     </div>
