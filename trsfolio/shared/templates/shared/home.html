@@ -10,28 +10,605 @@
 <link rel="stylesheet" href="{% static "css/home.css" %}">
 {% endblock libraries %}
 
+{% block navbar %}
+{% include "includes/navbar.html" %}
+    
+{% endblock navbar %}
 
 {% block content %}
-<div id="home">
-    {% include "includes/navbar.html" %}
-    <div class="fullscreen">
-        <div class="mega-title">
-            TRS
+<div id="home" class="custom-border">
+    <div class="d-none d-md-block">
+        <div class="row one align-middle">
+            <div onclick="changeBig('ghost')" class="custom-border col-2 text-center align-middle align-items-center">
+                <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
+            </div>
+            <div class="custom-border col-3 text-center align-middle align-items-center">
+                <a href="{% url 'music:events' %}">Proximas Fechas</a>
+            </div>
+            <div class="custom-border col-3 text-center align-middle align-items-center">
+                <a href="">Press kit (pdf)</a>
+            </div>
+            <div class="custom-border col-3 text-center align-middle align-items-center">
+                <a href="">Merch</a>
+            </div>
+            <div class="custom-border col-1 text-center align-middle align-items-center">
+                <a href="https://www.instagram.com/victrs__/" target="_blank">insta</a>
+            </div>
         </div>
-        <div class="button-div text-center">
-            <button class="md-trigger fill" data-modal="modal-12">
-                contact them
-            </button>
+        <div class="row">
+            <div class="col-2">
+                <a class="row  two">
+                    
+                    <div class="custom-border col-12 text-center align-middle align-items-center invert">
+                        <img class="img-fluid" src="{% static 'img/icons/synth.png' %}" alt="">
+                    </div>
+                </a>
+                <a class="row  two">
+                    <div  class="custom-border col-12 text-center align-middle align-items-center invert">
+                        <img class="img-fluid" src="{% static 'img/icons/camera.png' %}" alt="">
+                    </div>
+                </a>
+                <a class="row  two">
+                    
+                    <div class="custom-border col-12 text-center align-items-center invert">
+                        <img class="img-fluid" src="{% static 'img/icons/robot.png' %}" alt="">
+                    </div>
+                    
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <div onclick="changeBig('art')" class="custom-border col-12 text-center align-middle align-items-center question-div">
+                        Arte?
+                </div>
+                <div onclick="changeBig('work')" class="custom-border col-12 text-center align-middle align-items-center question-div">
+                        Como sobrevive?
+                </div>
+                <div onclick="changeBig('hire')" class="custom-border col-12 text-center align-middle align-items-center question-div">
+                        Contrataciones 
+                </div>
+                <div onclick="changeBig('collab')" class="custom-border col-12 text-center align-middle align-items-center question-div">
+                        Colaboraciones (????)
+                </div>
+                <div class="custom-border col-12 text-center align-middle align-items-center extra-div">
+                        ALGO
+                </div>
+            </div>
+            <div class="custom-border col-6 align-middle align-items-center invert-ghost">
+                <div class="gayrightsdiv init-hidden">
+                    <div class="queerghost align-items-center">
+                        <img class="img-fluid queerghost" src="{% static 'img/icons/queerghost.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="regulardiv">
+                    <div class="ghost align-items-center">
+                        <img id="ghost" class="img-fluid ghost" src="{% static 'img/icons/ghost.png' %}" alt="">
+                    </div>
+                    <div class="text-container p-5 text-left overflow-scroll art init-hidden">
+                        <h3>TRS</h3>
+                        <p>
+                            Hola, soy Vic, la persona creando bajo el nombre de TRS. <br>
+                            Me gusta experimentar con el sonido y la fotografía. 
+                            Aquí hay un poquito mas sobre mi trabajo en este ámbito y será tu decisión nombrarme 
+                            o no como artista.
+                        </p>
+                        <h4 class="subtitle">Musica</h4>
+                        <p>
+                            Como porductorx musical, me gusta crear piezas para retratar 
+                            la complejidad de la vida, los altos, los bajos
+                            y compartir un poco de mi camino de autodescubrimiento 
+                            y  auto-aceptación radical.
+                        </p>
+                        <p>
+                            Pro otro lado, en los livesets me gusta 
+                            crear en vivo, de forma improvisada, con la intención de generar espacios
+                            donde podamos desconectarnos de la realidad y disfrutar del momento.
+                        </p>
+                        <p>
+                            A lo largo de mi primer año presentado en vivo, he tenido la
+                            oportunidad de compartir el escenario con artistas locales 
+                            y nacionales como: 
+                            <a href="https://www.instagram.com/cncpcn/" target="_blank">Concepcion Huera</a>, 
+                            <a href="https://www.instagram.com/fe.sexta/" target="_blank">Fe Sexta</a>,
+                            <a href="https://www.instagram.com/ezeta.xyz/" target="_blank">Ezeta</a>,
+                            <a href="https://www.instagram.com/earthtomrlo/" target="_blank">Mrlo</a>,
+                            <a href="https://www.instagram.com/cndsd/" target="_blank">CNDSD</a> y
+                            <a href="https://www.instagram.com/http.efrain.yin/" target="_blank">Efrain Yin</a>.
+                        </p>
+                        <h4>Fotografía</h4>
+                        <p>
+                            Como fotografx, me gusta documentar mi existencia, retratar un poco de la vida de las 
+                            disidencias y compartir lo que pueda de mi perspectiva del mundo.
+                        </p>
+                        <p>
+                            He trabajado como fotografx de eventos culturales como 
+                            <a href="https://cutoutfest.com" target="_blank">CutOutFest 2023</a>,  
+                            <a href="https://tramite.art">Tramite 007</a> y conciertos de artistas independientes
+                        </p>
+        
+                        <h4>Otros Medios</h4>
+                        <p>
+                            A pesar de que la música y la fotografía son mis principales medios de expresión,
+                            no me cierro a la exploración de otras formas de crear como el video, la escritura y la ilustración.
+                            En realidad no tengo mucha experiencia con estos,
+                            pero como todx artista independiente he trabajado creando mi propio contenido visual y escrito. 
+                        </p>
+                        
+                    </div>
+                    <div class="text-container p-5 text-left overflow-scroll work init-hidden">
+                        <h3>Vic ingenierx(???)</h3>
+                        <p>
+                            A pesar de que me gustaría vivir de mi creatividad libre, la forma en la que puedo financiar mis 
+                        creaciones sin tener que responderle a nadie es a través de una combinación de mi trabajo como ingenierx y
+                        prestando mis servicios creativos.
+        
+                        </p>
+                        
+                        <h4>
+                            dxtr.
+                        </h4>
+                        <p>
+                            Soy socix fundadorx de <a href="https://dxtr.mx" target="_blank">dxtr.</a>, una agencia de diseño 
+                            y desarrollo de herramientas de software.
+                        </p>
+                        <p>
+                            Dentro de dxtr. he trabajado para compañías como shake shack y petco, sin embargo nuestra 
+                            especialidad es crear sistemas que ayudan a empresas locales a mejorar sus procesos de negocio.
+                        </p>
+                        <h4>
+                            Servicios Creativos
+                        </h4>
+                        <h5>
+                            Booking
+                        </h5>
+                        <p>
+                            Como artista independiente, me gusta trabajar con promotorxs locales para encontrar espacios 
+                            donde pueda compartir mi música. Estoy disponible para presentaciones en vivo para eventos 
+                            culturales, conciertos y festivales.
+                        </p>
+                        <h5>
+                            Producción Musical
+                        </h5>
+                        <p>
+                            Como productorx musical presto servicios de producción, corrección de voces, mezcla y masterización.
+                            Así como composición de música original para proyectos audiovisuales.
+                        </p>
+                        <h5>
+                            Fotografía
+                        </h5>
+                        <p>
+                            Como fotografx presto servicios de registro de eventos, fotografía de moda y retratos artísticos.
+                        </p>
+                        
+                    </div>
+        
+                    <div class="text-container p-5 text-left overflow-scroll hire init-hidden">
+                        <h5>
+                            Gracias por entrar a esta sección 😌
+                        </h5>
+                        <p>
+                            Si estás aquí, ponte en contacto conmigo ya sea por correo (<a href="mailto:vic@victrs.art">vic@victrs.art</a>) o por mis redes sociales.
+                            Platicame sobre tu proyecto y cómo puedo ayudarte a hacerlo realidad.
+                        </p>
+                        
+        
+                    </div>
+        
+                    <div class="text-container p-5 text-left overflow-scroll collab init-hidden">
+                        <h5>Colaboraciones</h5>
+                        <p>
+                            Si tienes algún proyecto sin fines de lucro o eres unx artista independiente y te gustaría colaborar conmigo,
+                            mandame tu idea y platicame un poco sobre ti y tu trabajo. Si coincidimos en ideales, seguro podremos crear algo juntxs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 text-center align-middle align-items-center row">
+                <div class="custom-border col-12 text-center align-middle align-items-center question-div">
+                    <a href="https://twitter.com/victrs__" target="_blank">tw</a>
+                </div>
+                <div class="custom-border col-12 text-center align-middle align-items-center question-div">
+                    <a href="https://open.spotify.com/artist/07HhD9aHBn67n4vKHKmPXL?si=GoQwyrf_T22fOCfM-wVr9w" target="_blank">spoti</a>
+                </div>
+                <div class="custom-border col-12 text-center align-middle align-items-center question-div">
+                    <a href="https://music.apple.com/mx/artist/trs/475730199?l=en-GB" target="_blank">apple</a>
+                </div>
+                <div class="custom-border col-12 text-center align-middle align-items-center question-div">
+                    <a href="https://www.youtube.com/@victrs__" target="_blank">yt</a>
+                </div>
+                <div class="custom-border col-12 text-center align-middle align-items-center question-div">
+                    <a href="https://soundcloud.com/trstrs" target="_blank">soundc</a>
+                </div>
+                <div class="custom-border col-12 text-center align-middle align-items-center question-div">
+                    <a href="https://www.tiktok.com/@victrs__" target="_blank">clock</a>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row  one">
+            <div class="custom-border col-2 text-center align-middle align-items-center special gayrights">
+                tHey/tHem/eLLe/eLLa
+            </div>
+            <div class="custom-border col-10 text-center align-middle align-items-center special">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            </div>
+            
+            
+            
+        </div>
+        <div class="row  half">
+            <div class="custom-border col-1 text-center align-middle align-items-center">
+                <a href="https://dxtr.mx" target="_blank">dxtr.</a>
+            </div>
+            <div class="custom-border col-1 text-center align-middle align-items-center">
+                2024
+            </div>
+            <div class="custom-border col-6 text-center align-middle align-items-center">
+                <a href="">vic@victrs.art</a>
+                
+            </div>
+            
+            
+            
+            
+            <div class="custom-border col-4 text-center align-middle align-items-center">
+                <a href="{% url 'shared:terms' %}" target="blank">Terms and Conditions</a>
+            </div>
+            
+    
         </div>
     </div>
+
+    <div class="d-lg-none">
+        <div class="row one align-middle">
+            <div onclick="changeBig('ghost')" class="custom-border col-3 text-center align-middle align-items-center">
+                <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
+            </div>
+            <div class="custom-border col-3 text-center align-middle align-items-center">
+                <a href="">Links</a>
+            </div>
+            <div class="custom-border col-3 text-center align-middle align-items-center">
+                <a href="{% url 'music:events' %}">Proximas Fechas</a>
+            </div>
+            <div class="custom-border col-3  text-center align-middle align-items-center">
+                <a href="">Press kit (pdf)</a>
+            </div>
+        </div>
+        <div class="row one align-midle">
+            <div id="left" class="custom-border col-1 text-center align-middle align-items-center">
+                <
+            </div>
+            <div id="section-title" class="custom-border col text-center align-middle align-items-center">
+                <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
+            </div>
+            <div id="right"  class="custom-border col-1 text-center align-middle align-items-center">
+                >
+            </div>
+        </div>
+        <div id="main-container" class="row text-container">
+            <div class="custom-border ghost-mobile">
+                <div class="ghost align-items-center">
+                    <img id="ghost" class="img-fluid ghost" src="{% static 'img/icons/ghost.png' %}" alt="">
+                </div>
+            </div>
+            <div class="custom-border text-container p-5 text-left overflow-scroll art-mobile init-hidden">
+                <h3>TRS</h3>
+                <p>
+                    Hola, soy Vic, la persona creando bajo el nombre de TRS. <br>
+                    Me gusta experimentar con el sonido y la fotografía. 
+                    Aquí hay un poquito mas sobre mi trabajo en este ámbito y será tu decisión nombrarme 
+                    o no como artista.
+                </p>
+                <h4 class="subtitle">Musica</h4>
+                <p>
+                    Como porductorx musical, me gusta crear piezas para retratar 
+                    la complejidad de la vida, los altos, los bajos
+                    y compartir un poco de mi camino de autodescubrimiento 
+                    y  auto-aceptación radical.
+                </p>
+                <p>
+                    Pro otro lado, en los livesets me gusta 
+                    crear en vivo, de forma improvisada, con la intención de generar espacios
+                    donde podamos desconectarnos de la realidad y disfrutar del momento.
+                </p>
+                <p>
+                    A lo largo de mi primer año presentado en vivo, he tenido la
+                    oportunidad de compartir el escenario con artistas locales 
+                    y nacionales como: 
+                    <a href="https://www.instagram.com/cncpcn/" target="_blank">Concepcion Huera</a>, 
+                    <a href="https://www.instagram.com/fe.sexta/" target="_blank">Fe Sexta</a>,
+                    <a href="https://www.instagram.com/ezeta.xyz/" target="_blank">Ezeta</a>,
+                    <a href="https://www.instagram.com/earthtomrlo/" target="_blank">Mrlo</a>,
+                    <a href="https://www.instagram.com/cndsd/" target="_blank">CNDSD</a> y
+                    <a href="https://www.instagram.com/http.efrain.yin/" target="_blank">Efrain Yin</a>.
+                </p>
+                <h4>Fotografía</h4>
+                <p>
+                    Como fotografx, me gusta documentar mi existencia, retratar un poco de la vida de las 
+                    disidencias y compartir lo que pueda de mi perspectiva del mundo.
+                </p>
+                <p>
+                    He trabajado como fotografx de eventos culturales como 
+                    <a href="https://cutoutfest.com" target="_blank">CutOutFest 2023</a>,  
+                    <a href="https://tramite.art">Tramite 007</a> y conciertos de artistas independientes
+                </p>
+
+                <h4>Otros Medios</h4>
+                <p>
+                    A pesar de que la música y la fotografía son mis principales medios de expresión,
+                    no me cierro a la exploración de otras formas de crear como el video, la escritura y la ilustración.
+                    En realidad no tengo mucha experiencia con estos,
+                    pero como todx artista independiente he trabajado creando mi propio contenido visual y escrito. 
+                </p>
+                
+            </div>
+
+            <div class="text-container p-5 text-left overflow-scroll work-mobile init-hidden">
+                <h3>Vic ingenierx(???)</h3>
+                <p>
+                    A pesar de que me gustaría vivir de mi creatividad libre, la forma en la que puedo financiar mis 
+                creaciones sin tener que responderle a nadie es a través de una combinación de mi trabajo como ingenierx y
+                prestando mis servicios creativos.
+
+                </p>
+                
+                <h4>
+                    dxtr.
+                </h4>
+                <p>
+                    Soy socix fundadorx de <a href="https://dxtr.mx" target="_blank">dxtr.</a>, una agencia de diseño 
+                    y desarrollo de herramientas de software.
+                </p>
+                <p>
+                    Dentro de dxtr. he trabajado para compañías como shake shack y petco, sin embargo nuestra 
+                    especialidad es crear sistemas que ayudan a empresas locales a mejorar sus procesos de negocio.
+                </p>
+                <h4>
+                    Servicios Creativos
+                </h4>
+                <h5>
+                    Booking
+                </h5>
+                <p>
+                    Como artista independiente, me gusta trabajar con promotorxs locales para encontrar espacios 
+                    donde pueda compartir mi música. Estoy disponible para presentaciones en vivo para eventos 
+                    culturales, conciertos y festivales.
+                </p>
+                <h5>
+                    Producción Musical
+                </h5>
+                <p>
+                    Como productorx musical presto servicios de producción, corrección de voces, mezcla y masterización.
+                    Así como composición de música original para proyectos audiovisuales.
+                </p>
+                <h5>
+                    Fotografía
+                </h5>
+                <p>
+                    Como fotografx presto servicios de registro de eventos, fotografía de moda y retratos artísticos.
+                </p>
+                
+            </div>
+
+            <div class="text-container p-5 text-left overflow-scroll hire-mobile init-hidden">
+                <h5>
+                    Gracias por entrar a esta sección 😌
+                </h5>
+                <p>
+                    Si estás aquí, ponte en contacto conmigo ya sea por correo (<a href="mailto:vic@victrs.art">vic@victrs.art</a>) o por mis redes sociales.
+                    Platicame sobre tu proyecto y cómo puedo ayudarte a hacerlo realidad.
+                </p>
+            </div>
+
+            <div class="text-container p-5 text-left overflow-scroll collab-mobile init-hidden">
+                <h5>Colaboraciones</h5>
+                <p>
+                    Si tienes algún proyecto sin fines de lucro o eres unx artista independiente y te gustaría colaborar conmigo,
+                    mandame tu idea y platicame un poco sobre ti y tu trabajo. Si coincidimos en ideales, seguro podremos crear algo juntxs.
+                </p>
+            </div>
+
+            <div class="text-container text-left overflow-scroll links-mobile init-hidden">
+                <div class="row">
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://soundcloud.com/trstrs" target="_blank">insta</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://www.tiktok.com/@victrs__" target="_blank">clock</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://twitter.com/victrs__" target="_blank">tw</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://open.spotify.com/artist/07HhD9aHBn67n4vKHKmPXL?si=GoQwyrf_T22fOCfM-wVr9w" target="_blank">spoti</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://music.apple.com/mx/artist/trs/475730199?l=en-GB" target="_blank">apple</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://www.youtube.com/@victrs__" target="_blank">yt</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://soundcloud.com/trstrs" target="_blank">soundc</a>
+                    </div>
+                    <div class="custom-border col-6 text-center align-middle align-items-center question-div">
+                        <a href="https://www.tiktok.com/@victrs__" target="_blank">merch</a>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
 </div>
-<footer class="container-fluid">
+<!-- <footer class="container-fluid">
     <div class="row">
         <div class="col-6"><a href="{% url 'shared:terms' %}" target="blank">Terms and Conditions</a></div>
         <div class="col-6 text-right">trs © 2021</div>
     </div>
-</footer>
+</footer> -->
 {% endblock content %}
 
 {% block javascript %}
+<script>
+    var section = 0;
+
+    $('.invert').hover(mouseEnter, mouseLeave);
+    function mouseEnter() {
+        // find the image inside the div
+        var img = this.querySelector('img');
+        img.classList.add('invert_image');
+    };
+    function mouseLeave() {
+         // find the image inside the div
+        var img = this.querySelector('img');
+        img.classList.remove('invert_image');  
+    };
+    $('.invert-ghost').hover(changeGhost, revertGhost);
+    function changeGhost() {
+        // find the image inside the div
+        var img = this.querySelector('#ghost');
+        img.src = "{% static 'img/icons/happyghost.png' %}";
+    };
+    function revertGhost() {
+        // find the image inside the div
+        var img = this.querySelector('#ghost');
+        img.src = "{% static 'img/icons/ghost.png' %}";
+    };
+
+    $('.gayrights').hover(changeQGhost, revertQGhost);
+    function changeQGhost() {
+        // find the image inside the div
+        document.querySelector('.regulardiv').style.display = 'none';
+        document.querySelector('.gayrightsdiv').style.display = 'block';
+    };
+    function revertQGhost() {
+        // find the image inside the div
+        document.querySelector('.regulardiv').style.display = 'block';
+        document.querySelector('.gayrightsdiv').style.display = 'none';
+    };
+
+    $('#left').click(function() {
+        if (section > 0) {
+            section -= 1;
+        } else {
+            section = 5;
+        }
+
+        changeMobile(section);
+    });
+
+    $('#right').click(function() {
+        if (section < 5) {
+            section += 1;
+        } else {
+            section = 0;
+        }
+
+        changeMobile(section);
+    });
+
+
+    function changeMobile(section){
+        var ghost = document.querySelector('.ghost-mobile');
+        var art = document.querySelector('.art-mobile');
+        var work = document.querySelector('.work-mobile');
+        var hire = document.querySelector('.hire-mobile');
+        var collab = document.querySelector('.collab-mobile');
+        var links = document.querySelector('.links-mobile');
+
+        ghost.style.display = 'none';
+        art.style.display = 'none';
+        work.style.display = 'none';
+        hire.style.display = 'none';
+        collab.style.display = 'none';
+        links.style.display = 'none';
+
+
+
+        switch (section) {
+            case 0:
+                $('#section-title').text('TRS');
+                ghost.style.display = 'block';
+                break;
+            case 1:
+                $('#section-title').text('Arte?');
+                art.style.display = 'block';
+                break;
+            case 2:
+                $('#section-title').text('Como sobrevive?');
+                work.style.display = 'block';
+                break;
+            case 3:
+                $('#section-title').text('Contrataciones');
+                hire.style.display = 'block';
+                break;
+            case 4:
+                $('#section-title').text('Colaboraciones (????)');
+                collab.style.display = 'block';
+                break;
+            case 5:
+                $('#section-title').text('Links');
+                links.style.display = 'block';
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    function changeBig(type) {
+        console.log(type);
+        var ghost = document.querySelector('.ghost');
+        var art = document.querySelector('.art');
+        var work = document.querySelector('.work');
+        var hire = document.querySelector('.hire');
+        var collab = document.querySelector('.collab');
+        switch (type) {
+            case 'ghost':
+                // hide div
+                ghost.style.display = 'block';
+                art.style.display = 'none';
+                work.style.display = 'none';
+                hire.style.display = 'none';
+                collab.style.display = 'none';
+                break;
+
+            case 'art':
+                art.style.display = 'block';
+                ghost.style.display = 'none';
+                work.style.display = 'none';
+                hire.style.display = 'none';
+                collab.style.display = 'none';
+                break;
+            case 'work':
+                work.style.display = 'block';
+                art.style.display = 'none';
+                ghost.style.display = 'none';
+                hire.style.display = 'none';
+                collab.style.display = 'none';
+                break;
+                
+            case 'hire':
+                hire.style.display = 'block';
+                art.style.display = 'none';
+                work.style.display = 'none';
+                ghost.style.display = 'none';
+                collab.style.display = 'none';
+                break;
+                
+            case 'collab':
+                collab.style.display = 'block';
+                art.style.display = 'none';
+                work.style.display = 'none';
+                hire.style.display = 'none';
+                ghost.style.display = 'none';
+                break;
+                
+            default:
+                break;
+        }
+    }
+</script>
 {% endblock javascript %}

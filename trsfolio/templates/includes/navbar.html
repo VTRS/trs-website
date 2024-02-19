@@ -1,23 +1,32 @@
-<nav class="navb">
-    <div class="circle">
-        <a href="{% url 'shared:home' %}" class="nav__link"><span class="dot"></span> <span class="beta">(beta)</span></a>
-    </div>
-	<input type="checkbox" id="nav" class="hidden" />
-	<label for="nav" class="nav__open"><i></i><i></i><i></i></label>
-	<div class="nav">
-		<ul class="nav__items">
-            <li class="nav__item"><a 
-                href="{% url 'software:portfolio' %}" 
-                class="nav__link {% if 'software' in request.path %}active{% endif %}" 
-                data-hover="SOFTWARE">SOFTWARE</a></li>
-            <li class="nav__item"><a 
-                href="{% url 'photography:gallery' %}" 
-                class="nav__link {% if 'photography' in request.path %}active{% endif %}" 
-                data-hover="PHOTOGRAPHY">PHOTOGRAPHY</a></li>
-            <li class="nav__item"><a 
-                href="{% url 'music:discography' %}" 
-                class="nav__link {% if 'music' in request.path %}active{% endif %}" 
-                data-hover="MUSIC">MUSIC</a></li>
-		</ul>
-	</div>
+{% load static %}
+
+<nav class="d-lg-none navbar bottom-nav navbar-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none p-0">
+    <ul class="navbar-nav nav-justified w-100 custom-border">
+        <li class="nav-item custom-border">
+            <a href="" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/synth.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+
+        <li class="nav-item custom-border">
+            <a href="" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/camera.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+
+        <li class="nav-item custom-border">
+            <a href="" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/robot.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+        <li class="nav-item custom-border">
+            <a href="" class="nav-link text-center nav-ghost">
+                <img class="img-fluid" src="{% static 'img/icons/ghost.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+    </ul>
 </nav>

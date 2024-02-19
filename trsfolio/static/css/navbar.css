@@ -30,10 +30,13 @@
 	color: var(--primary);
 }
 
-.navb {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	background-color: transparent;
+.navbar {
+	background-color: var(--primary);
+}
+
+.nav-ghost {
+    padding: 1rem !important;
+    
 }
 
 .hidden {
