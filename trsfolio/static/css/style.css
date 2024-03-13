@@ -3,6 +3,17 @@
     --secondary: #000000;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body:-webkit-scrollbar {
+	display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+body {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
 body{
     background-color: var(--primary);
     font-family: "Noto Sans Display", sans-serif;
@@ -12,6 +23,10 @@ body{
     font-variation-settings:
     "wdth" 100;
     /* padding: 0rem 0.7rem; */
+}
+
+.row {
+    --bs-gutter-x: 0;
 }
 
 a {
@@ -37,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html {
-	font-size: 15px;
+	font-size: 9px;
 	color: var(--primary)
 }
 
@@ -245,9 +260,9 @@ button {
 
 }
   
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 768px) {
 	html {
-		font-size: 20px;
+		font-size: 15px;
 	}
 	.md-modal{
 		top: 5%;
@@ -261,10 +276,6 @@ button {
 	.button-div{
 		bottom: 1rem;
 	}
-}
-
-@media screen and (max-width: 1000px) {
-
 }
 
 input::-webkit-input-placeholder,
@@ -479,7 +490,21 @@ textarea:hover {
     z-index: 9999;
     animation: FadeIn 1.5s forwards;
 }
+/* .invert{
 
-.contact-icon{
-	filter: invert(55%) sepia(83%) saturate(1496%) hue-rotate(178deg) brightness(98%) contrast(91%);
+    
+} */
+
+.invert:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+	color: var(--primary);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+.invert:active {
+	background-color: var(--secondary);
+	color: var(--primary);
 }

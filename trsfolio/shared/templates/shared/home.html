@@ -10,12 +10,37 @@
 <link rel="stylesheet" href="{% static "css/home.css" %}">
 {% endblock libraries %}
 
-{% block navbar %}
-{% include "includes/navbar.html" %}
-    
-{% endblock navbar %}
-
 {% block content %}
+<nav class="d-lg-none navbar bottom-nav navbar-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none p-0">
+    <ul class="navbar-nav nav-justified w-100 custom-border">
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'music:discography' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/synth.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'photography:gallery' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/camera.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'software:portfolio' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/robot.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'shared:home' %}" class="nav-link text-center nav-ghost">
+                <img class="img-fluid" src="{% static 'img/icons/ghost.png' %}" alt="">
+                <!-- <span class="small nav-text d-block">Operadores</span> -->
+            </a>
+        </li>
+    </ul>
+</nav>
 <div id="home" class="custom-border">
     <div class="d-none d-md-block">
         <div class="row one align-middle">
@@ -37,23 +62,21 @@
         </div>
         <div class="row">
             <div class="col-2">
-                <a class="row  two">
+                <a href="{% url 'music:discography' %}" class="row  two">
                     
                     <div class="custom-border col-12 text-center align-middle align-items-center invert">
                         <img class="img-fluid" src="{% static 'img/icons/synth.png' %}" alt="">
                     </div>
                 </a>
-                <a class="row  two">
+                <a href="{% url 'photography:gallery' %}" class="row  two">
                     <div  class="custom-border col-12 text-center align-middle align-items-center invert">
                         <img class="img-fluid" src="{% static 'img/icons/camera.png' %}" alt="">
                     </div>
                 </a>
-                <a class="row  two">
-                    
+                <a href="{% url 'software:portfolio' %}" class="row  two">
                     <div class="custom-border col-12 text-center align-items-center invert">
                         <img class="img-fluid" src="{% static 'img/icons/robot.png' %}" alt="">
                     </div>
-                    
                 </a>
             </div>
             <div class="col-3 text-center">
@@ -264,7 +287,7 @@
                 <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
             </div>
             <div class="custom-border col-3 text-center align-middle align-items-center">
-                <a href="">Links</a>
+                <a href="{% url 'shared:links' %}">Links</a>
             </div>
             <div class="custom-border col-3 text-center align-middle align-items-center">
                 <a href="{% url 'music:events' %}">Proximas Fechas</a>
@@ -290,7 +313,7 @@
                     <img id="ghost" class="img-fluid ghost" src="{% static 'img/icons/ghost.png' %}" alt="">
                 </div>
             </div>
-            <div class="custom-border text-container p-5 text-left overflow-scroll art-mobile init-hidden">
+            <div class="custom-border text-container p-5 pb-5 text-left overflow-scroll art-mobile init-hidden">
                 <h3>TRS</h3>
                 <p>
                     Hola, soy Vic, la persona creando bajo el nombre de TRS. <br>
@@ -342,7 +365,7 @@
                 
             </div>
 
-            <div class="text-container p-5 text-left overflow-scroll work-mobile init-hidden">
+            <div class="text-container p-5 pb-5 text-left overflow-scroll work-mobile init-hidden">
                 <h3>Vic ingenierx(???)</h3>
                 <p>
                     A pesar de que me gustaría vivir de mi creatividad libre, la forma en la que puedo financiar mis 
@@ -389,7 +412,7 @@
                 
             </div>
 
-            <div class="text-container p-5 text-left overflow-scroll hire-mobile init-hidden">
+            <div class="text-container p-5 pb-5 text-left overflow-scroll hire-mobile init-hidden">
                 <h5>
                     Gracias por entrar a esta sección 😌
                 </h5>
@@ -399,7 +422,7 @@
                 </p>
             </div>
 
-            <div class="text-container p-5 text-left overflow-scroll collab-mobile init-hidden">
+            <div class="text-container p-5 pb-5 text-left overflow-scroll collab-mobile init-hidden">
                 <h5>Colaboraciones</h5>
                 <p>
                     Si tienes algún proyecto sin fines de lucro o eres unx artista independiente y te gustaría colaborar conmigo,
@@ -453,18 +476,6 @@
 {% block javascript %}
 <script>
     var section = 0;
-
-    $('.invert').hover(mouseEnter, mouseLeave);
-    function mouseEnter() {
-        // find the image inside the div
-        var img = this.querySelector('img');
-        img.classList.add('invert_image');
-    };
-    function mouseLeave() {
-         // find the image inside the div
-        var img = this.querySelector('img');
-        img.classList.remove('invert_image');  
-    };
     $('.invert-ghost').hover(changeGhost, revertGhost);
     function changeGhost() {
         // find the image inside the div

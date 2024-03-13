@@ -9,59 +9,100 @@
 <link rel="stylesheet" href="{% static "css/navbar.css" %}">
 <link rel="stylesheet" href="{% static "css/music.css" %}">
 
+
 {% endblock libraries %}
+
+{% block navbar %}
+
+{% endblock navbar %}
 
 
 {% block content %}
-<div id="home">
-    {% include "includes/navbar.html" %}
-    <div class="content">
-       <main>
-            <div class="player text-center center">
-                <canvas></canvas>
-                <div class="song">
-                    <div class="name">press play to load songs</div>
-                    <div class="artist"></div>
-                </div>
-                <div class="playarea">
-                    <div class="prevSong"></div>
-                    <div onclick="loadSongs()" class="play"></div>
-                    <div class="pause"></div>
-                    <div class="nextSong"></div>
-                </div>
-                <div class="soundControl"></div>
-                <div class="time">00:00</div>
-            </div>
-            <div class="button-div text-center">
-                <button class="md-trigger fill" data-modal="modal-12">
-                    contact them
-                </button>
-            </div>
-        </main>
+<main id="music" class="custom-border">
+    {% include 'includes/navbar.html' %}
+
+    <div class="row top-links">
+        <div class="col custom-border text-center align-middle align-items-center">
+            <h4>
+                <a class="text-muted" href="{% url 'music:discography' %}">
+                    Discografía
+                </a>
+            </h4>
+
+        </div>
+        <div class="col custom-border text-center align-middle align-items-center">
+            <h4>
+                <a class="text-muted" href="{% url 'music:events' %}">
+                    Live Set
+                </a>
+            </h4>
+        </div>
     </div>
-</div>
+
+    <div class="row">
+        <div class="col custom-border eps-div overflow-scroll p-5">
+            <div class="row">
+            {% for ep  in eps %}
+                    <div class="col-12 col-md-4 col-lg-3 p-2 p-xl-4">
+                        <div class="custom-border">
+                            <div class="row">
+                                <div class="col">
+                                    <img class="img-fluid custom-border" src="{{ep.artwork.url}}" alt="{{ep.name}}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col custom-border p-1">
+                                    <h5>{{ep.name}}</h5>
+                                    <span>{{ ep.release_date|date:"Y" }}</span>
+                                    <br>
+                                    TRS<span class="text-muted">{% for artist in ep.artists.all %}, {{artist}}{% endfor %}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                {% if ep.spotify %}
+                                    <div class="col custom-border text-center align-middle align-items-center">
+                                        <a href="{{ep.spotify}}">sp</a>
+                                    </div>   
+                                {% endif %}
+                                {% if ep.apple %}
+                                    <div class="col custom-border text-center align-middle align-items-center">
+                                        <a href="{{ep.apple}}">ap</a>
+                                    </div>   
+                                {% endif %}
+
+                                {% if ep.soundcloud %}
+                                    <div class="col custom-border text-center align-middle align-items-center">
+                                        <a href="{{ep.youtube}}">sc</a>
+                                    </div>   
+                                {% endif %}
+
+                                {% if ep.youtube %}
+                                    <div class="col custom-border text-center align-middle align-items-center">
+                                        <a href="{{ep.youtube}}">yt</a>
+                                    </div>   
+                                {% endif %}
+                                
+                                {% if ep.bandcamp %}
+                                    <div class="col custom-border text-center align-middle align-items-center">
+                                        <a href="{{ep.bandcamp}}">bc</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                    </div>
+            {% endfor %}
+            </div>
+            <div class="empty-div m-5 p-3"></div>
+        </div>
+    </div>
+
+    
+    
+
+</main>
 {% endblock content %}
 
 {% block javascript %}
-<script src="{% static 'js/media-player.js' %}"></script>
-<script>
-first = true;
-function loadSongs(){
-    if (first === true){
-        Player.tracks = [
-            {% for track in tracks %}
-                {
-                    artist: "{{ track.artist }}",
-                    song: "{{ track.name }}",
-                    url: "{{ track.file.url }}"
-                },
-            {% endfor %}
-        ];
-        Player.init();
-        first = false;
-    }
-
-}
-</script>
 {% endblock javascript %}
 

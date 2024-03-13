@@ -63,3 +63,21 @@ function checkform(){
         document.getElementById('send-form').style.visibility = 'hidden';
     }
 }
+
+$('.invert').hover(mouseEnter, mouseLeave);
+  function mouseEnter() {
+      // find the image inside the div
+      var img = this.querySelector('img');
+      img.classList.add('invert_image');
+  };
+  function mouseLeave() {
+        // find the image inside the div
+      var img = this.querySelector('img');
+      img.classList.remove('invert_image');  
+  };
+
+  $('.invert').click(function() {
+    var img = this.querySelector('img');
+    img.classList.toggle('invert_image');
+  });
+  

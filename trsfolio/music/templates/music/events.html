@@ -6,49 +6,57 @@
 
 {% block libraries %}
 <!-- Stylesheet -->
-<link rel="stylesheet" href="{% static "css/music.css" %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static "css/eventos.css" %}">
 <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>   
 
 {% endblock libraries %}
 
 
 {% block content %}
+<main id="eventos" class="custom-border">
+    {% include 'includes/navbar.html' %}
+    <div class="row top-links">
+        <div class="col custom-border text-center align-middle align-items-center">
+            <h4>
+                <a class="text-muted" href="{% url 'music:discography' %}">
+                    Discografía
+                </a>
+            </h4>
+
+        </div>
+        <div class="col custom-border text-center align-middle align-items-center">
+            <h4>
+                <a class="text-muted" href="{% url 'music:events' %}">
+                    Live Set
+                </a>
+            </h4>
+        </div>
+    </div>
+    <h1>Eventos</h1>
+
+</main>
+
+
+
+
+
 <div id="home">
     <div class="content ps-xl-5 pe-xl-5">
        <main class="">
-            <h1 class="mega-title">Eventos</h1>
+            
             
             {% for event in events %}
                 <div class="row my-3">
                     <div class="col-12 col-xl-3 text-xl-start text-center align-self-center">
                         <add-to-calendar-button
-                            styleLight="
-                                --date-btn-background: #694BE4;
-                                --btn-background-hover:#694BE4;
-                                --date-btn-text: #161C2C;
-                                --list-background: #694BE4;
-                                --list-background-hover: #8269e6;
-                                --date-btn-cal-background: 694BE4;
-                                --date-btn-cal-day-text: #161C2C;
-                                --date-btn-cal-month-text: #161C2C;
-                                
-                            "
-                            styleDark="
-                                --date-btn-background: #694BE4;
-                                --btn-background-hover:#694BE4;
-                                --date-btn-text: #161C2C;
-                                --list-background: #694BE4;
-                                --list-background-hover: #8269e6;
-                                --date-btn-cal-background: 694BE4;
-                                --date-btn-cal-day-text: #161C2C;
-                                --date-btn-cal-month-text: #161C2C;
-                            " 
-                            name="TRS Live Set"
+                            name={{ event.name }}
                             startDate="{{ event.date|date:"Y-m-d" }}"
                             startTime="{{ event.date|time:"H:i" }}"
                             endTime="{{ event.end_date|time:"H:i" }}"
                             options="'Apple','Google','Outlook.com'"
-                            buttonStyle="date"
+                            customCss="http://{{ request.get_host }}{% static 'css/calendar.css' %}"
+                            buttonStyle="custom"
                             hideBackground
                             hideCheckmark
                             size="6"
@@ -215,11 +223,11 @@
             
         </main>
     </div>
-    <div class="button-div text-center">
+    <!-- <div class="button-div text-center">
         <button class="md-trigger fill" data-modal="modal-12">
             contact them
         </button>
-    </div>
+    </div> -->
 </div>
 {% endblock content %}
 
