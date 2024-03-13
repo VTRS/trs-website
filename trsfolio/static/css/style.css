@@ -1,15 +1,58 @@
 /* Variables */
 :root{
-    --secondary: #161C2C;
+    --secondary: #000000;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body:-webkit-scrollbar {
+	display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+body {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
 }
 
 body{
-    background-color: var(--secondary);
-    font-family: 'Mukta', sans-serif;
+    background-color: var(--primary);
+    font-family: "Noto Sans Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    /* padding: 0rem 0.7rem; */
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+    transition: 500ms;
+    
+}
+
+a:hover {
+    font-weight: 200;
+    letter-spacing: 0.01rem;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Sans Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin-bottom: 0rem;
 }
 
 html {
-	font-size: 16px;
+	font-size: 9px;
 	color: var(--primary)
 }
 
@@ -33,9 +76,6 @@ button {
 	-webkit-transition: 0.08s ease-in;
 }
 
-h3 {
-	font-weight: 800;
-}
 
 .fill:hover {
 	color: var(--secondary);
@@ -60,6 +100,34 @@ h3 {
 .fill:hover:before {
 	top: 0;
 }
+
+.custom-border{ 
+    border-color: var(--secondary);
+    border-style: solid;
+    border-width: 0.03rem;
+}
+
+.row .custom-border {
+    padding: 0rem;
+    overflow: hidden;
+}
+
+.special{
+    font-family: "Major Mono Display", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.6rem;
+}
+
+
+
+
+.align-items-center {
+    display: flex; 
+    align-items: center;  /*Aligns vertically center */
+    justify-content: center; /*Aligns horizontally center */
+}
+
 
 
 
@@ -192,9 +260,9 @@ h3 {
 
 }
   
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 768px) {
 	html {
-		font-size: 22px;
+		font-size: 15px;
 	}
 	.md-modal{
 		top: 5%;
@@ -208,10 +276,6 @@ h3 {
 	.button-div{
 		bottom: 1rem;
 	}
-}
-
-@media screen and (max-width: 1000px) {
-
 }
 
 input::-webkit-input-placeholder,
@@ -426,7 +490,21 @@ textarea:hover {
     z-index: 9999;
     animation: FadeIn 1.5s forwards;
 }
+/* .invert{
 
-.contact-icon{
-	filter: invert(55%) sepia(83%) saturate(1496%) hue-rotate(178deg) brightness(98%) contrast(91%);
+    
+} */
+
+.invert:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+	color: var(--primary);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+.invert:active {
+	background-color: var(--secondary);
+	color: var(--primary);
 }

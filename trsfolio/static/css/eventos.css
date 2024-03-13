@@ -1,0 +1,36 @@
+:root {
+    --primary: #000000;
+    --secondary:#F4AEFF;
+
+}
+
+#eventos {
+    color: var(--secondary);
+}
+
+.text-muted {
+    color: var(--secondary) !important;
+}
+
+html {
+    color: var(--secondary);
+}
+
+nav img{
+    filter: invert(89%) sepia(84%) saturate(5943%) hue-rotate(239deg) brightness(104%) contrast(103%);
+}
+
+.invert_image{
+    filter: none;
+}
+
+.top-links{
+    height: 8vh;
+    max-height: 8vh;
+}
+
+
+@media screen and (min-width: 768px) {
+    
+
+}

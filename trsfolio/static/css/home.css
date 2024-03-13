@@ -1,11 +1,15 @@
+:root {
+    --primary: #C0B2FF;
+}
 #home{
-    --primary: #F53141;
-    color: var(--primary)
+    color: var(--secondary);
+    width: 100%;
+    height: 100%;
 }
 
 .dot {
-  box-shadow: inset 0 0 0 0px var(--secondary);
-	color: var(--primary);
+    box-shadow: inset 0 0 0 0px var(--secondary);
+    color: var(--primary);
 }
 
 .mega-title{
@@ -19,12 +23,55 @@
     /* transform: translateY(-50%); */
 }
 
+.invert_image{
+    filter: invert(77%) sepia(11%) saturate(4976%) hue-rotate(198deg) brightness(102%) contrast(105%);
+}
+
+.title span{
+    transition: 0.3s;
+}
+
+.title span:hover{
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
+
+.title{
+    transition: 0.5s;
+}
+
+.title:hover{
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
+
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+
+
+.init-hidden{
+    display: none;
+
+}
+
+
+.queerghost{
+    z-index: 100;
+    background-color: var(--primary);
+    
+}
+
 footer{
 	position: absolute;
 	bottom: 0;
 	padding-left: 1rem;
-  padding-right: 1rem;
-  color: #1C232E;
+    padding-right: 1rem;
+    color: #1C232E;
 }
 footer a{
 	color: #1C232E;
@@ -33,18 +80,137 @@ footer a{
 
 footer a:hover{
 	color: #F53141;
-  text-decoration: none;
+    text-decoration: none;
 }
 
-
+/* phone */
 @media screen and (min-width: 320px) {
-  .mega-title{
-	margin-top: 35%;
-	font-size: 15rem;
-  }
+    .row.one{
+        height: 7.5vh;
+        max-height: 7.5vh;
+    }
+
+    .row.two{
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+    .text-container{
+        height: 73vh;
+        max-height: 73vh;
+    }
+
+    div.ghost {
+        height: 85%;
+    }
+
+    .row.three{
+        height: 15vh;
+        max-height: 15vh;
+    }
+
+    .row.half{
+        height: 5vh;
+        font-size: 0.7rem;
+        opacity: 0.5;
+    }
+
+    .row.two .custom-border img{
+        max-height: 18vh;
+        
+    }
+
+    .extra-div{
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+    .question-div{
+        height: 15.5vh;
+        max-height: 15.5vh;
+    }
+
+    .ghost img{
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+    .queerghost img{
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+    .row.four{
+        height: 40vh;
+    }
 }
 
-@media screen and (min-width: 1000px) {
+/* landscape or small devices */
+@media screen and (min-width: 768px) {
+    .row.one{
+        height: 10vh;
+        max-height: 10vh;
+    }
+    
+    .row.two{
+        height: 25vh;
+        max-height: 25vh;
+    }
+    
+    .text-container{
+        max-height: 75vh;
+    }
+    
+    .row.three{
+        height: 15vh;
+        max-height: 15vh;
+    }
+    
+    .row.half{
+        height: 5vh;
+        font-size: 0.7rem;
+        opacity: 0.5;
+    }
+
+    .row.two .custom-border img{
+        max-height: 18vh;
+        
+    }
+    
+    .extra-div{
+        height: 25vh;
+        max-height: 25vh;
+    }
+    
+    .question-div{
+        height: 12.5vh;
+        max-height: 12.5vh;
+    }
+    
+    .ghost img{
+        height: 25vh;
+        max-height: 25vh;
+    }
+    
+    .queerghost img{
+        height: 25vh;
+        max-height: 25vh;
+    }
+
+    .row.four{
+        height: 40vh;
+    }
+    
+  
+}
+
+/* large devises */
+@media screen and (min-width: 992px){
+    
+}
+
+/* huge */
+@media screen and (min-width: 1200px) {
     .mega-title{
       font-size: 20rem;
       margin-top: 0;
@@ -54,6 +220,6 @@ footer a:hover{
     }
 }
 
-.coverdiv {
+/* .coverdiv {
   background-color: #F53141;
-}
+} */

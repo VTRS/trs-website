@@ -1,23 +1,69 @@
-<nav class="navb">
-    <div class="circle">
-        <a href="{% url 'shared:home' %}" class="nav__link"><span class="dot"></span> <span class="beta">(beta)</span></a>
-    </div>
-	<input type="checkbox" id="nav" class="hidden" />
-	<label for="nav" class="nav__open"><i></i><i></i><i></i></label>
-	<div class="nav">
-		<ul class="nav__items">
-            <li class="nav__item"><a 
-                href="{% url 'software:portfolio' %}" 
-                class="nav__link {% if 'software' in request.path %}active{% endif %}" 
-                data-hover="SOFTWARE">SOFTWARE</a></li>
-            <li class="nav__item"><a 
-                href="{% url 'photography:gallery' %}" 
-                class="nav__link {% if 'photography' in request.path %}active{% endif %}" 
-                data-hover="PHOTOGRAPHY">PHOTOGRAPHY</a></li>
-            <li class="nav__item"><a 
-                href="{% url 'music:discography' %}" 
-                class="nav__link {% if 'music' in request.path %}active{% endif %}" 
-                data-hover="MUSIC">MUSIC</a></li>
-		</ul>
-	</div>
+{% load static %}
+<nav class="d-lg-none navbar bottom-nav navbar-dark navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none p-0">
+    <ul class="navbar-nav nav-justified w-100 custom-border">
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'music:discography' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/synth.png' %}" alt="">
+            </a>
+        </li>
+
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'photography:gallery' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/camera.png' %}" alt="">
+            </a>
+        </li>
+
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'software:portfolio' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/robot.png' %}" alt="">
+            </a>
+        </li>
+        <li class="nav-item custom-border invert">
+            <a href="{% url 'shared:home' %}" class="nav-link text-center nav-ghost">
+                <img class="img-fluid" src="{% static 'img/icons/ghost.png' %}" alt="">
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="d-none d-md-block">
+    <ul class="row custom-border">
+        <li class="custom-border col-12 nav-1 text-center align-middle align-items-center">
+            <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
+        </li>
+        <li class="nav-item custom-border col-12 nav-2 align-middle align-items-center invert">
+            <a href="{% url 'music:discography' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/synth.png' %}" alt="">
+               
+            </a>
+        </li>
+
+        <li class="nav-item custom-border col-12 nav-2 align-middle align-items-center invert">
+            <a href="{% url 'photography:gallery' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/camera.png' %}" alt="">
+               
+            </a>
+        </li>
+
+        <li class="nav-item custom-border col-12 nav-2 align-middle align-items-center invert">
+            <a href="{% url 'software:portfolio' %}" class="nav-link text-center">
+                <img class="img-fluid" src="{% static 'img/icons/robot.png' %}" alt="">
+                
+            </a>
+        </li>
+        <li class="nav-item custom-border col-12 nav-2 align-middle align-items-center invert">
+            <a href="{% url 'shared:home' %}" class="nav-link text-center nav-ghost">
+                <img class="img-fluid" src="{% static 'img/icons/ghost.png' %}" alt="">
+            </a>
+        </li>
+        <li class="custom-border col12 nav-1 text-center align-middle align-items-center special gayrights">
+            tHey/tHem/eLLe/eLLa
+        </li>
+        <li class="custom-border nav-item col text-center align-middle align-items-center nav-3">
+            2024
+        </li>
+        <li class="custom-border nav-item col text-center align-middle align-items-center nav-3">
+            <a href="https://dxtr.mx" target="_blank">dxtr.</a>
+        </li>
+    </ul>
 </nav>

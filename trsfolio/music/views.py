@@ -5,9 +5,8 @@ from django.utils import timezone
 
 # Create your views here.
 def discography(request):
-    tracks = Song.objects.all()
-
-    return render(request, 'music/discography.html', {'tracks': tracks})
+    eps = Ep.objects.all().order_by('-release_date')
+    return render(request, 'music/discography.html', {'eps': eps})
 
 def events(request):
     events = Event.objects.filter(end_date__gte=timezone.now()).order_by('date')
