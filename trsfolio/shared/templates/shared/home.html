@@ -300,8 +300,8 @@
             <div id="left" class="custom-border col-1 text-center align-middle align-items-center">
                 <
             </div>
-            <div id="section-title" class="custom-border col text-center align-middle align-items-center">
-                <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
+            <div id="section-title" class="custom-border col text-center align-middle align-items-center special pointer">
+                tHey/tHem/eLLe/eLLa
             </div>
             <div id="right"  class="custom-border col-1 text-center align-middle align-items-center">
                 >
@@ -524,6 +524,19 @@
         changeMobile(section);
     });
 
+    var flag = false;
+
+    $('#section-title').click(function() {
+        var ghost = document.querySelector('#ghost-mobile');
+        if (flag){
+            ghost.src = "{% static 'img/icons/ghost.png' %}";
+            flag = false;
+        } else {
+            ghost.src = "{% static 'img/icons/queerghost.png' %}";
+            flag = true;
+        }
+    });
+
 
     function changeMobile(section){
         var ghost = document.querySelector('.ghost-mobile');
@@ -539,8 +552,6 @@
         hire.style.display = 'none';
         collab.style.display = 'none';
         links.style.display = 'none';
-
-        flag = false;
 
         switch (section) {
             case 0:
