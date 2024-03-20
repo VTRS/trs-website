@@ -45,53 +45,56 @@
             {% for event in events %}
                 <div class="col-6 col-md-4 col-xl-3 p-2 p-xl-4">
                     <div class="row custom-border">
-                        <div class="col-12">
-                            <img class="img-fluid custom-border" src="{{event.flyer.url }}" alt="">
-                        </div>
+                        {% if event.flyer %}
+                            <div class="col-12">
+                                                        <img class="img-fluid custom-border" src="{{event.flyer.url }}" alt="">
+                                                    </div>
+                        {% endif %}
+                        
                         <div class="col-12 custom-border px-3 py-2">
                             <h5>{{event.name}}</h5>
                             {{event.description}}
 
                         </div>
-                        <div class="col-12 custom-border">
+                        <div class="col-12">
                             <div class="row">
-                                <div class="col px-3 py-2">
+                                <div class="col custom-border px-3 py-2">
                                     {{ event.date|date:"d F Y" }}
                                     <br>
                                     {{ event.date|time:"H:i" }}
                                 </div>
                                 <div class="col-auto custom-border invert-quick">
                                     <add-to-calendar-button
-                                                                styleLight="
-                                                                    --btn-background: transparent;
-                                                                    --btn-border: transparent;
-                                                                    --btn-hover-background:  #F4AEFF;
-                                                                    --btn-text: #F4AEFF;
-                                                                    --btn-border-radius: 0px;
-                                                                    --wrapper-padding: 0px;
-                                                                    --btn-active-shadow: 0px 0px 0px 0px;
-                                                                "
-                                                                styleLight="
-                                                                    
-                                                                    --btn-background: transparent;
-                                                                    --btn-border: transparent;
-                                                                    --btn-hover-background:  #F4AEFF;
-                                                                    --btn-text: #F4AEFF;
-                                                                    --btn-border-radius: 0px;
-                                                                    --wrapper-padding: 0px;
-                                                                "
-                                                                name={{ event.name }}
-                                                                startDate="{{ event.date|date:"Y-m-d" }}"
-                                                                startTime="{{ event.date|time:"H:i" }}"
-                                                                endTime="{{ event.end_date|time:"H:i" }}"
-                                                                timeZone="America/Mexico_City"
-                                                                location="{{ event.venue.name }}"
-                                                                options="'iCal'"
-                                                                buttonsList
-                                                                hideTextLabelButton
-                                                                lightMode="bodyScheme"
-                                                               
-                                                            ></add-to-calendar-button>
+                                        styleLight="
+                                            --btn-background: transparent;
+                                            --btn-border: transparent;
+                                            --btn-hover-background:  #F4AEFF;
+                                            --btn-text: #F4AEFF;
+                                            --btn-border-radius: 0px;
+                                            --wrapper-padding: 0px;
+                                            --btn-active-shadow: 0px 0px 0px 0px;
+                                        "
+                                        styleLight="
+                                            
+                                            --btn-background: transparent;
+                                            --btn-border: transparent;
+                                            --btn-hover-background:  #F4AEFF;
+                                            --btn-text: #F4AEFF;
+                                            --btn-border-radius: 0px;
+                                            --wrapper-padding: 0px;
+                                        "
+                                        name={{ event.name }}
+                                        startDate="{{ event.date|date:"Y-m-d" }}"
+                                        startTime="{{ event.date|time:"H:i" }}"
+                                        endTime="{{ event.end_date|time:"H:i" }}"
+                                        timeZone="America/Mexico_City"
+                                        location="{{ event.venue.name }}"
+                                        options="'iCal'"
+                                        buttonsList
+                                        hideTextLabelButton
+                                        lightMode="bodyScheme"
+                                        
+                                    ></add-to-calendar-button>
 
                                 </div>
 
@@ -108,9 +111,9 @@
                         </div>
                         <div class="col-12">
                             <div class="row">
-                                <div class="col custom-border px-3 py-2">
-                                    {% if event.venue.instagram or event.venue.website %}
-                                        Event: &nbsp;
+                                {% if event.venue.instagram or event.venue.website %}
+                                    <div class="col custom-border px-3 py-2">
+                                        Venue: &nbsp;
                                         {% if event.venue.instagram %}
                                             <a target="_blank" href="{{event.venue.instagram}}">
                                                 <i class="bi bi-instagram"></i>
@@ -124,10 +127,10 @@
                                                 <i class="bi bi-link"></i>
                                             </a>
                                         {% endif %}
-                                    {% endif %}
-                                </div>
-                                <div class="col custom-border px-3 py-2">
-                                    {% if event.instagram or event.website %}
+                                    </div>
+                                {% endif %}
+                                {% if event.instagram or event.website %}
+                                    <div class="col custom-border px-3 py-2">
                                         Event: &nbsp;
                                         {% if event.instagram %}
                                             <a target="_blank" href="{{event.instagram}}">
@@ -142,8 +145,8 @@
                                                 <i class="bi bi-link"></i>
                                             </a>
                                         {% endif %}
-                                    {% endif %}
-                                </div>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -180,35 +183,35 @@
                                         </div>
                                         <div class="col-auto custom-border">
                                             <add-to-calendar-button
-                                                                        styleLight="
-                                                                            --btn-background: transparent;
-                                                                            --btn-border: transparent;
-                                                                            --btn-hover-background:  #F4AEFF;
-                                                                            --btn-text: #F4AEFF;
-                                                                            --btn-border-radius: 0px;
-                                                                            --wrapper-padding: 0px;
-                                                                        "
-                                                                        styleLight="
-                                                                            
-                                                                            --btn-background: transparent;
-                                                                            --btn-border: transparent;
-                                                                            --btn-hover-background:  #F4AEFF;
-                                                                            --btn-text: #F4AEFF;
-                                                                            --btn-border-radius: 0px;
-                                                                            --wrapper-padding: 0px;
-                                                                        "
-                                                                        name={{ event.name }}
-                                                                        startDate="{{ event.date|date:"Y-m-d" }}"
-                                                                        startTime="{{ event.date|time:"H:i" }}"
-                                                                        endTime="{{ event.end_date|time:"H:i" }}"
-                                                                        timeZone="America/Mexico_City"
-                                                                        location="{{ event.venue.name }}"
-                                                                        options="'iCal'"
-                                                                        buttonsList
-                                                                        hideTextLabelButton
-                                                                        lightMode="bodyScheme"
-                                                                       
-                                                                    ></add-to-calendar-button>
+                                                styleLight="
+                                                    --btn-background: transparent;
+                                                    --btn-border: transparent;
+                                                    --btn-hover-background:  #F4AEFF;
+                                                    --btn-text: #F4AEFF;
+                                                    --btn-border-radius: 0px;
+                                                    --wrapper-padding: 0px;
+                                                "
+                                                styleLight="
+                                                    
+                                                    --btn-background: transparent;
+                                                    --btn-border: transparent;
+                                                    --btn-hover-background:  #F4AEFF;
+                                                    --btn-text: #F4AEFF;
+                                                    --btn-border-radius: 0px;
+                                                    --wrapper-padding: 0px;
+                                                "
+                                                name={{ event.name }}
+                                                startDate="{{ event.date|date:"Y-m-d" }}"
+                                                startTime="{{ event.date|time:"H:i" }}"
+                                                endTime="{{ event.end_date|time:"H:i" }}"
+                                                timeZone="America/Mexico_City"
+                                                location="{{ event.venue.name }}"
+                                                options="'iCal'"
+                                                buttonsList
+                                                hideTextLabelButton
+                                                lightMode="bodyScheme"
+                                                
+                                            ></add-to-calendar-button>
         
                                         </div>
         
