@@ -51,10 +51,10 @@
                 <a href="{% url 'music:events' %}">Proximas Fechas</a>
             </div>
             <div class="custom-border col-3 text-center align-middle align-items-center">
-                <a href="">Press kit (pdf)</a>
+                <a href="{{presskit.file.url}}" target="_blank">Press kit (pdf)</a>
             </div>
             <div class="custom-border col-3 text-center align-middle align-items-center">
-                <a href="">Merch</a>
+                <a href="{% url 'shared:under_construction' %}">Merch</a>
             </div>
             <div class="custom-border col-1 text-center align-middle align-items-center">
                 <a href="https://www.instagram.com/victrs__/" target="_blank">insta</a>
@@ -266,7 +266,7 @@
                 2024
             </div>
             <div class="custom-border col-6 text-center align-middle align-items-center">
-                <a href="">vic@victrs.art</a>
+                <a href="mailto:vic@victrs.art">vic@victrs.art</a>
                 
             </div>
             
@@ -286,14 +286,11 @@
             <div onclick="changeBig('ghost')" class="custom-border col-3 text-center align-middle align-items-center">
                 <h1 class="title"><span>T</span><span>R</span><span>S</span></h1>
             </div>
-            <div class="custom-border col-3 text-center align-middle align-items-center">
-                <a href="{% url 'shared:links' %}">Links</a>
-            </div>
-            <div class="custom-border col-3 text-center align-middle align-items-center">
+            <div class="custom-border col-6 text-center align-middle align-items-center">
                 <a href="{% url 'music:events' %}">Proximas Fechas</a>
             </div>
             <div class="custom-border col-3  text-center align-middle align-items-center">
-                <a href="">Press kit (pdf)</a>
+                <a href="{{presskit.file.url}}" target="_blank">Press kit (pdf)</a>
             </div>
         </div>
         <div class="row one align-midle">
@@ -457,7 +454,7 @@
                         <a href="https://soundcloud.com/trstrs" target="_blank">soundc</a>
                     </div>
                     <div class="custom-border col-6 text-center align-middle align-items-center question-div">
-                        <a href="https://www.tiktok.com/@victrs__" target="_blank">merch</a>
+                        <a href="{% url 'shared:under_construction' %}">merch</a>
                     </div>
 
                 </div>

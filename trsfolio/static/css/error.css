@@ -1,58 +1,16 @@
-#home{
-    --primary: #3DA6F0;
-    color: var(--primary);
+:root {
+    --primary: #B9F6FF;
 }
 
-.dot {
-  border-color: var(--primary);
-	background-color: var(--primary);
+.invert_image{
+  filter: invert(89%) sepia(93%) saturate(7494%) hue-rotate(170deg) brightness(104%) contrast(105%);
 }
 
-  
-
-
-.coverdiv {
-  background-color: #3DA6F0;
-}
-
-.mega-title{
-  font-weight: 900;
-  font-size: 4rem;
-  text-align: center;
-  margin-top: 6rem;
-}
-
-.mega-subtitle{
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 800;
-    color: var(--primary);
+.error-div{
+  height: 99.9vh;
+  max-height: 99.9vh;
+  overflow: hidden;
 }
 
 
-footer{
-	position: absolute;
-	bottom: 0;
-	padding-left: 1rem;
-  padding-right: 1rem;
-  color: #1C232E;
-}
-footer a{
-	color: #1C232E;
-	text-decoration: none;
-}
 
-footer a:hover{
-	color: #3DA6F0;
-  text-decoration: none;
-}
-
-
-@media screen and (min-width: 320px) {
-}
-
-@media screen and (min-width: 1000px) {
-    .button-div{
-        margin-top: -3rem;
-    }
-}
