@@ -3,10 +3,12 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponse
 from .models import *
+from shared.models import File
 
 # Create your views here.
-def home(request):    
-    return render(request, 'shared/home.html')
+def home(request): 
+    presskit =  File.objects.get(name='presskit') 
+    return render(request, 'shared/home.html', {'presskit': presskit})
 
 def links(request):
     links = Link.objects.all()
@@ -14,6 +16,9 @@ def links(request):
 
 def terms(request):
     return render(request, 'shared/terms.html')
+
+def under_construction(request):
+    return render(request, 'shared/under_construction.html')
 
 def contact(request):
     if request.method == 'POST':

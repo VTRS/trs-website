@@ -12,28 +12,25 @@
 
 
 {% block content %}
-<div id="home">
+<main id="error" class="custom-border">
     {% include "includes/navbar.html" %}
-    <div class="fullscreen">
-        <div class="mega-title">
-            ERROR 404
+    <div class="custom-border error-div  p-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h1>Error 404</h1>
+                <p>Lo que buscas no existe, si es mi error trataré de arreglarlo lo más pronto posible.</p>
+            </div>
         </div>
-        <div class="mega-subtitle">
-            nothing to see here, sorry friend :(
+        <div class="ghost text-center">
+            <img id="ghost-mobile" class="img-fluid ghost ghost" src="{% static 'img/icons/ghost.png' %}" alt="">
         </div>
-        <div class="button-div text-center">
-            <button class="md-trigger fill" data-modal="modal-12">
-                contact them
-            </button>
-        </div>
-    </div>
-</div>
-<footer class="container-fluid">
-    <div class="row">
-        <div class="col-6"><a href="{% url 'shared:terms' %}" target="blank">Terms and Conditions</a></div>
-        <div class="col-6 text-right">trs © 2021</div>
-    </div>
-</footer>
+
+        
+
+     </div>
+</main>
+
+
 {% endblock content %}
 
 {% block javascript %}
