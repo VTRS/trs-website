@@ -310,7 +310,7 @@
         <div id="main-container" class="row text-container">
             <div class="custom-border ghost-mobile">
                 <div class="ghost align-items-center">
-                    <img id="ghost" class="img-fluid ghost" src="{% static 'img/icons/ghost.png' %}" alt="">
+                    <img id="ghost-mobile" class="img-fluid ghost ghost" src="{% static 'img/icons/ghost.png' %}" alt="">
                 </div>
             </div>
             <div class="custom-border text-container p-5 pb-5 text-left overflow-scroll art-mobile init-hidden">
@@ -540,15 +540,30 @@
         collab.style.display = 'none';
         links.style.display = 'none';
 
-
+        flag = false;
 
         switch (section) {
             case 0:
-                $('#section-title').text('TRS');
+                $('#section-title').text('tHey/tHem/eLLe/eLLa');
+                $('#section-title').addClass('pointer');
+                $('#section-title').addClass('special');
+                $('#section-title').click(function() {
+                    var ghost = document.querySelector('#ghost-mobile');
+                    if (flag){
+                        ghost.src = "{% static 'img/icons/ghost.png' %}";
+                        flag = false;
+                    } else {
+                        ghost.src = "{% static 'img/icons/queerghost.png' %}";
+                        flag = true;
+                    }
+                });
                 ghost.style.display = 'block';
                 break;
             case 1:
                 $('#section-title').text('Arte?');
+                $('#section-title').removeClass('pointer');
+                $('#section-title').removeClass('special');
+                $('#section-title').unbind('click');
                 art.style.display = 'block';
                 break;
             case 2:
@@ -564,6 +579,9 @@
                 collab.style.display = 'block';
                 break;
             case 5:
+                $('#section-title').removeClass('pointer');
+                $('#section-title').removeClass('special');
+                $('#section-title').unbind('click');
                 $('#section-title').text('Links');
                 links.style.display = 'block';
                 break;
