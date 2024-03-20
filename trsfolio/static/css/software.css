@@ -1,105 +1,37 @@
-#home{
-    --primary: #4CF37C;
-    color: var(--primary);
+
+:root {
+  --primary: #7FFFCE;
 }
 
-.dot {
-  border-color: var(--primary);
-	background-color: var(--primary);
+.invert_image{
+  filter: invert(91%) sepia(14%) saturate(1232%) hue-rotate(87deg) brightness(101%) contrast(108%);
 }
 
-  
 
-
-.coverdiv {
-  background-color: #4CF37C;
-}
-
-.mega-title{
-  font-weight: 900;
-  font-size: 4rem;
-  text-align: center;
-}
-
-.mega-subtitle{
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 800;
-  color: var(--secondary);
-  text-shadow: 
-      -0.06rem 0 var(--primary), 
-      0 0.06rem var(--primary), 
-      0.06rem 0 var(--primary), 
-      0 -0.06rem var(--primary); /* horizontal-offset vertical-offset 'blur' colour */
-  -moz-text-shadow: 
-      -0.06rem 0 var(--primary), 
-      0 0.06rem var(--primary), 
-      0.06rem 0 var(--primary), 
-      0 -0.06rem var(--primary);
-  -webkit-text-shadow: 
-      -0.06rem 0 var(--primary), 
-      0 0.06rem var(--primary), 
-      0.06rem 0 var(--primary), 
-      0 -0.06rem var(--primary);
-}
 
 .detail-content{
   margin-top: 12rem;
 }
 
+.software-div{
+  height: 99.9vh;
+  max-height: 99.9vh;
+}
+
 @supports (-webkit-text-stroke: 0.06rem var(--primary)) {
-	.mega-subtitle{
-		text-shadow: 
-			0rem 0 var(--primary), 
-			0rem var(--primary), 
-			0rem 0 var(--primary), 
-			0 0rem var(--primary); /* horizontal-offset vertical-offset 'blur' colour */
-		-webkit-text-stroke: 0.06rem var(--primary);
-	}
-}
-
-.project-title{
-  font-size: 2rem;
-  font-weight: 800;
-}
-
-.project-title a{
-  color: var(--primary);
-}
-
-.project-title a:hover{
-  text-decoration: none;
-}
-
-.project-links{
-  filter: invert(68%) sepia(97%) saturate(296%) hue-rotate(79deg) brightness(96%) contrast(105%);
-}
-
-.project-description a{
-  color: var(--primary);
-  text-align: right !important;
-}
-
-.project-description a:hover{
-  text-decoration: solid;
-}
-
-
-
-button {
-	color: #4CF37C;
-  border: 0.01rem  solid;
+	
 }
 
 .tags span{
   background-color: var(--primary);
-  border-radius: 100px;
+  border-color: var(--secondary);
+  border-style: solid;
+  border-width: 1px;
   color: var(--secondary);
   font-size: 0.6rem;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  padding-left: 0.18rem;
-  padding-right: 0.18rem;
+  padding: 0.2rem 0.5rem;
 }
 
 

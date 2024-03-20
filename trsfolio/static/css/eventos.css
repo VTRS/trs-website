@@ -12,6 +12,20 @@
     color: var(--secondary) !important;
 }
 
+.calendar .atcb-button{
+    background-color: var(--primary)!important;
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+#eventos .atcb-button.atcb-no-text.atcb-dropoverlay.atcb-single{
+    margin: 0px !important;
+}
+
+.invert-quick:hover  {
+    background-color: var(--secondary);
+}
+
 html {
     color: var(--secondary);
 }
@@ -27,6 +41,11 @@ nav img{
 .top-links{
     height: 8vh;
     max-height: 8vh;
+}
+
+.event-div{
+    height: 91.9vh;
+    max-height: 91.9vh;
 }
 
 

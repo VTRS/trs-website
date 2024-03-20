@@ -14,7 +14,7 @@
     color: var(--secondary);
 }
 
-.title span{
+/* .title span{
     transition: 0.3s;
 }
 
@@ -32,26 +32,23 @@
     font-weight: 700;
     letter-spacing: 0.2rem;
     cursor: pointer;
-}
+} */
 
 .top-links{
     height: 8vh;
     max-height: 8vh;
 }
 
+.eps-div{
+    height: 91.9vh;
+    max-height: 91.9vh;
+}
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (min-width: 1000px) {
    
 }
 
 @media screen and (min-width: 768px) {
-    .top-links{
-        height: 8vh;
-        max-height: 8vh;
-    }
-
-    .eps-div{
-        height: 92vh;
-        max-height: 92vh;
-    }
+    
 }

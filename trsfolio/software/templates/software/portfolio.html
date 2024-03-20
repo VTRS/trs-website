@@ -12,6 +12,72 @@
 
 
 {% block content %}
+<main id="software" class="custom-border">
+    {% include "includes/navbar.html" %}
+    <div class="custom-border software-div overflow-scroll p-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h1>Software Projects</h1>
+            </div>
+        </div>
+
+
+        {% for project in projects  %}
+            <div class="row custom-border"> 
+                <div class="col-12 align-self-center text-center custom-border px-3 py-2">
+                    <h3 class="">
+                        <a href="{% url 'software:project_detail' project.id %}">
+                            {{ project.name }}
+                        </a>
+                    </h3>
+                </div>
+                <div class="col-12">
+                    <div class="row text-center">
+                        {% if project.github %}
+                            <a class="col custom-border invert px-3 py-2"  href="{{ project.github }}" target="blank">
+                                github
+                            </a>
+                        {% endif %}
+                        {% if project.link %}
+                        <a class="col custom-border invert px-3 py-2"  href="{{ project.link }}" target="blank">
+                            link
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>  
+                <div class="col-12 custom-border px-3 py-2">
+                    <div class="project-description">
+                        {{ project.description|linebreaks }}
+                        <div class="text-right">
+                            <a href="{% url 'software:project_detail' project.id %}">Read more about it.</a>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <p>
+                            Technology Stack:
+                            <br>
+                            {% for tag in  project.tags.all %}
+                                <span>
+                                    {{ tag }}
+                                </span>
+                            {% endfor %}
+                                
+                        </p>
+                    </div>
+                </div>   
+                <a class="col-12 custom-border px-3 py-2 invert text-center " href="{% url 'software:project_detail' project.id %}">
+                    Read more about it.
+                </a> 
+            </div>
+            
+        {% endfor %}
+
+     </div>
+</main>
+
+
+{% endblock content %}
+
 <div id="home">
     {% include "includes/navbar.html" %}
     <div class="content">
@@ -20,7 +86,7 @@
                 <div class="col-12 p-0">
                     <div class="min-vh-100 text-center m-0 d-flex flex-column justify-content-center">
                         <h1 class="mega-title">
-                            Victor Hugo Torres Rivera
+                            Vic
                         </h1>
                         <h2 class="mega-subtitle">
                             Computer Scientist & Software Engineer
@@ -93,7 +159,6 @@
         </main>
     </div>
 </div>
-{% endblock content %}
 
 {% block javascript %}
 {% endblock javascript %}

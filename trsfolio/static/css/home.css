@@ -12,39 +12,9 @@
     color: var(--primary);
 }
 
-.mega-title{
-    font-family: 'Anton', sans-serif;
-    letter-spacing: -0.1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0;
-    /* transform: translateY(-50%); */
-}
 
 .invert_image{
     filter: invert(77%) sepia(11%) saturate(4976%) hue-rotate(198deg) brightness(102%) contrast(105%);
-}
-
-.title span{
-    transition: 0.3s;
-}
-
-.title span:hover{
-    font-weight: 900;
-    letter-spacing: 0.2rem;
-    cursor: pointer;
-}
-
-.title{
-    transition: 0.5s;
-}
-
-.title:hover{
-    font-weight: 700;
-    letter-spacing: 0.2rem;
-    cursor: pointer;
 }
 
 
@@ -167,7 +137,7 @@ footer a:hover{
     }
     
     .row.half{
-        height: 5vh;
+        height: 4.9vh;
         font-size: 0.7rem;
         opacity: 0.5;
     }

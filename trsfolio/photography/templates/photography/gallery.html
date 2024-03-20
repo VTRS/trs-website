@@ -15,8 +15,60 @@
 
 
 {% block content %}
-<div id="home">
+<main id="photography" class="custom-border">
     {% include "includes/navbar.html" %}
+    <div class="custom-border photo-div overflow-scroll p-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                 <h1>Proyectos Fotograficos</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for serie in series %}
+                <div class="col-6 col-md-4 col-xl-3 p-2">
+                    <div class="row custom-border">
+                        <div class="col-12 custom-border">
+                            <a class="" href="" data-toggle="lightbox" data-gallery="gallery">
+                                <div 
+                                    class="square glitch"
+                                    
+                                    {% if serie.album.images.all.0.thumbnail %}
+                                        style="background-image: url({{ serie.album.images.all.0.thumbnail.url }});"
+                                    {% else %}
+                                        style="background-image: url({{ serie.album.images.all.0.image.url }});"
+                                    {% endif %}
+                                        
+                                    alt="Thumbnail"
+                                ></div>
+                            </a>
+                        </div>
+                        <div class="col-9 px-3 py-2 custom-border">
+                            <h5>
+                                {{ serie.title }}
+                            </h5>
+                        </div>
+                        <div class="col-3 px-3 py-2 custom-border text-center align-middle align-items-center">
+                            <!-- number of photos -->
+                            {{ serie.album.images.all.count }}<i class="bi bi-file-image-fill"></i>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock content %}
+
+<div id="home">
+    
     <div class="content">
        <main>
            
@@ -42,24 +94,16 @@
                 </div>
             </article>
            {% endfor %}
-               
-            
-            <div class="button-div text-center">
-                <button class="md-trigger fill" data-modal="modal-12">
-                    contact them
-                </button>
-            </div>
         </main>
     </div>
 </div>
-{% endblock content %}
 
 {% block javascript %}
-   <script>
+   <!-- <script>
        $(document).on("click", '[data-toggle="lightbox"]', function(event) {
             event.preventDefault();
             $(this).ekkoLightbox();
         });
-   </script>
+   </script> -->
 {% endblock javascript %}
 
