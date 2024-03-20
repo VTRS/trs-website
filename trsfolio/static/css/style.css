@@ -342,7 +342,7 @@ textarea:hover {
 .invert:hover {
     cursor: pointer;
     background-color: var(--secondary);
-	color: var(--primary);
+	  color: var(--primary) !important;
     -webkit-transition: background-color 300ms linear;
     -ms-transition: background-color 300ms linear;
     transition: background-color 300ms linear;
