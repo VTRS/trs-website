@@ -166,9 +166,11 @@
                     {% for event in past_events %}
                         <div class="col-6 col-md-4 col-xl-3 p-2 p-xl-4">
                             <div class="row custom-border">
-                                <div class="col-12">
-                                    <img class="img-fluid custom-border" src="{{event.flyer.url }}" alt="">
-                                </div>
+                                {% if event.flyer %}
+                                    <div class="col-12">
+                                        <img class="img-fluid custom-border" src="{{event.flyer.url }}" alt="">
+                                    </div>
+                                {% endif %}
                                 <div class="col-12 custom-border px-3 py-2">
                                     <h5>{{event.name}}</h5>
                                     {{event.description}}
