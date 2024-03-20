@@ -12,6 +12,25 @@ nav {
     
 }
 
+.title span{
+    transition: 0.3s;
+}
+
+.title span:hover{
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
+
+.title{
+    transition: 0.5s;
+}
+
+.title:hover{
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
 
 @media screen and (min-width: 768px) {
 	nav {
@@ -49,13 +68,21 @@ nav {
 	}
 
 	.nav-3 {
-		height: 4vh;
-		max-height: 4vh;
+		height: 3.9vh;
+		max-height: 3.9vh;
 	}
 
 	.nav-ghost {
 		padding: 0.6rem !important;
 		
+	}
+
+	.corner-left {
+		border-radius: 0 0 0 9px;
+	}
+
+	.corner-rigth {
+		border-radius: 0 0 9px 0;
 	}
 
 }
