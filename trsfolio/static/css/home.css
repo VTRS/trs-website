@@ -53,6 +53,69 @@ footer a:hover{
     text-decoration: none;
 }
 
+.glitched{
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+}
+
+*,
+*::before,
+*::after {
+	transform-style: preserve-3d;
+}
+
+.glitched > span {
+    position: relative;
+    color: transparent;
+  }
+  
+  .glitched > span::after {
+    content: attr(data-char);
+    position: absolute;
+    display: inline-block;
+    inset: 0;
+    color: var(--secondary);
+  }
+  
+  .glitched:is(:hover, :focus-visible) > span::after {
+    animation: flash calc(var(--speed, 0.25) * 1s) calc(var(--index, 0) * 0.05s) steps(1, end);
+  }
+  
+  @keyframes flash {
+    0%, 20%   { content: '_'; }
+    40%  { content: var(--char-1); }
+    60%  { content: var(--char-2); }
+    80%  { content: var(--char-3); }
+  }
+  
+  .glitched::before {
+      content: ".char ::after";
+      position: absolute;
+      left: 100%;
+      white-space: nowrap;
+      translate: 0 -50%;
+      transform-origin: 0 50%;
+      scale: 0.5;
+      top: 50%;
+      text-transform: none;
+      pointer-events: none;
+      opacity: 0;
+  }
+  
+  .glitched::before {
+      transition: opacity 0.5s 0s;
+  }
+  
+  .glitched {
+      transition: transform 0.5s 1s, scale 0.5s 3s, opacity 0s 3s;
+  }
+
+
+
 /* phone */
 @media screen and (min-width: 320px) {
     .row.one{
