@@ -45,12 +45,6 @@
     font-size: 2rem;
 }
 
-*,
-*::before,
-*::after {
-	transform-style: preserve-3d;
-}
-
 .glitched > span {
     position: relative;
     color: transparent;
@@ -112,8 +106,8 @@
     }
 
     .text-container{
-        height: 85vh;
-        max-height: 85vh;
+        height: 75vh;
+        max-height: 75vh;
     }
 
     div.ghost {
