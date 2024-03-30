@@ -12,97 +12,173 @@
 
 
 {% block content %}
-<div id="home">
+<main id="software" class="custom-border">
     {% include "includes/navbar.html" %}
-    <div class="detail-content">
-        <header class="container-fluid">
-            <div class="row">
-                <div class="col-12 p-0">
-                    <div class="text-center m-0 d-flex flex-column justify-content-center">
-                        <h1 class="mega-title">
-                            {{ project.name }}
-                        </h1>
+    <div class="custom-border software-div overflow-scroll p-5">
 
-                        <div class="project-links">
-                                        
-                            {% if project.github %}
-                                <a href="{{ project.github }}" target="blank">
-                                    <img class="contact-icon" src="{% static "img/icons/github.svg" %}" alt="github">
-                                </a>
-                            {% endif %}
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h1>{{ project.name }} </h1>
+                <div class="project-links">
+                                    
+                    {% if project.github %}
+                        <a href="{{ project.github }}" target="blank">github</a>
+                    {% endif %}
+                    
+                    
+                    {% if project.link %}
+                        <a href="{{ project.link }}" target="blank"> link</a>
+                    {% endif %}
+    
+                </div>
+            </div>
+        </div>
+        <section class="container">
+            <h3 class="subtitle">::Description</h3>
+            <div class="project-description">
+                {{ project.description|linebreaks }}
+            </div>
+        </section>
+
+        <section class="container mt-5">
+            <h3 class="mb-4">::Screenshots</h3>
+            <div class="screenshots custom-row mx-5 px-lg-5">
+                
+                {% for column in screenshots %}
+                    
+                    <div class="custom-column">
+                        
+                        {% for image in column %}
+                            {{image.name}}
+                            <img src="{{ image.image.url }}" alt="">
                             
+                        {% endfor %}
                             
-                            {% if project.link %}
-                                <a href="{{ project.link }}" target="blank">
-                                    <img class="contact-icon" src="{% static "img/icons/link.svg" %}" alt="link">
-                                </a>
-                            {% endif %}
-            
-                        </div>
+                    </div>
+                    
+                {% endfor %}
+                    
+            </div>
+        </section>  
+        
+        <section class="mt-5 container">
+            <h3 class="subtitle">::For my fellow nerds</h3>
+            <div class="technical_description">
+                {{ project.projectdetails.technical_description|linebreaks }}
+            </div>
+        </section>   
+        <section class="mt-5 container">
+            <h3 class="subtitle">::Contributions</h3>
+            <div class="contributions">
+                {{ project.projectdetails.contributions|linebreaks }}
+            </div>
+        </section>
+        <section class="mt-5 container">
+            <h3 class="subtitle">::Collaborators</h3>
+            <div class="collaborators">
+                <ul>
+
+                </ul>
+                {% for collaborator in project.projectdetails.collaborators.all  %}
+                    <li>
+                        {{collaborator.name}} : {{collaborator.roles}}                                   
+                    </li> 
+                {% endfor %}
+                    
+            </div>
+        </section>  
+
+    </div>
+</main>
+   
+
+    
+{% endblock content %}
+
+<div class="detail-content">
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div class="text-center m-0 d-flex flex-column justify-content-center">
+                    <h1 class="">
+                        {{ project.name }}
+                    </h1>
+
+                    <div class="project-links">
+                                    
+                        {% if project.github %}
+                            <a href="{{ project.github }}" target="blank">github</a>
+                        {% endif %}
+                        
+                        
+                        {% if project.link %}
+                            <a href="{{ project.link }}" target="blank"> link</a>
+                        {% endif %}
+        
                     </div>
                 </div>
             </div>
-        </header>
-        <main class='project_details'>
-            <div class="container">
-                <section>
-                    <h3 class="subtitle">::Description</h3>
-                    <div class="project-description">
-                        {{ project.description|linebreaks }}
-                    </div>
-                </section>
-                <section>
-                    <h3 class="subtitle">::Screenshots</h3>
-                    <div class="screenshots custom-row">
+        </div>
+    </header>
+    <main class='project_details'>
+        <div class="container">
+            <section>
+                <h3 class="subtitle">::Description</h3>
+                <div class="project-description">
+                    {{ project.description|linebreaks }}
+                </div>
+            </section>
+            <section>
+                <h3 class="subtitle">::Screenshots</h3>
+                <div class="screenshots custom-row">
+                    
+                    {% for column in screenshots %}
                         
-                        {% for column in screenshots %}
+                        <div class="custom-column">
                             
-                            <div class="custom-column">
+                            {% for image in column %}
+                                {{image.name}}
+                                <img src="{{ image.image.url }}" alt="">
                                 
-                                {% for image in column %}
-                                    {{image.name}}
-                                    <img src="{{ image.image.url }}" alt="">
-                                    
-                                {% endfor %}
-                                    
-                            </div>
-                            
-                        {% endfor %}
-                            
-                    </div>
-                </section>     
-                <section>
-                    <h3 class="subtitle">::For my fellow nerds</h3>
-                    <div class="technical_description">
-                        {{ project.projectdetails.technical_description|linebreaks }}
-                    </div>
-                </section>   
-                <section>
-                    <h3 class="subtitle">::Contributions</h3>
-                    <div class="contributions">
-                        {{ project.projectdetails.contributions|linebreaks }}
-                    </div>
-                </section>
-                <section>
-                    <h3 class="subtitle">::Collaborators</h3>
-                    <div class="collaborators">
-                        <ul>
+                            {% endfor %}
+                                
+                        </div>
+                        
+                    {% endfor %}
+                        
+                </div>
+            </section>     
+            <section>
+                <h3 class="subtitle">::For my fellow nerds</h3>
+                <div class="technical_description">
+                    {{ project.projectdetails.technical_description|linebreaks }}
+                </div>
+            </section>   
+            <section>
+                <h3 class="subtitle">::Contributions</h3>
+                <div class="contributions">
+                    {{ project.projectdetails.contributions|linebreaks }}
+                </div>
+            </section>
+            <section>
+                <h3 class="subtitle">::Collaborators</h3>
+                <div class="collaborators">
+                    <ul>
 
-                        </ul>
-                        {% for collaborator in project.projectdetails.collaborators.all  %}
-                            <li>
-                                {{collaborator.name}} : {{collaborator.roles}}                                   
-                            </li> 
-                        {% endfor %}
-                            
-                    </div>
-                </section>        
-            </div>
-            
-        </main>
-    </div>
+                    </ul>
+                    {% for collaborator in project.projectdetails.collaborators.all  %}
+                        <li>
+                            {{collaborator.name}} : {{collaborator.roles}}                                   
+                        </li> 
+                    {% endfor %}
+                        
+                </div>
+            </section>        
+        </div>
+        
+    </main>
 </div>
-{% endblock content %}
+</div>
 
 {% block javascript %}
 {% endblock javascript %}

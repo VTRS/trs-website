@@ -7,12 +7,6 @@
   filter: invert(91%) sepia(14%) saturate(1232%) hue-rotate(87deg) brightness(101%) contrast(108%);
 }
 
-
-
-.detail-content{
-  margin-top: 12rem;
-}
-
 .software-div{
   height: 99.9vh;
   max-height: 99.9vh;
@@ -36,15 +30,11 @@
 
 
 @media screen and (min-width: 320px) {
-  .mega-title{
-    margin-top: -9rem;
-  }
+  
 }
 
 @media screen and (min-width: 1000px) {
-  .mega-title{
-    margin-top: -15rem;
-  }
+  
 }
 
 .custom-row {

@@ -6,6 +6,7 @@ class Series(models.Model):
     title = models.CharField(max_length=100)
     argument = models.TextField()
     album = models.ForeignKey(Album, on_delete=models.CASCADE, blank=True, null=True)
+    cover = models.ImageField(upload_to='series/', blank=True, null=True)
 
     def __str__(self):
         return self.title
