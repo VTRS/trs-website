@@ -10,10 +10,10 @@ def gallery(request):
 def series(request, series_id):
     series = Series.objects.get(id=series_id)
     images = series.album.images.all()
-    column_length = math.ceil(images.count()/4)
+    column_length = math.ceil(images.count()/3)
     photos = []
     count = 0
-    for i in range(0,4):
+    for i in range(0,3):
         if column_length <= images.count():
             column = images[:column_length]
             images = images[column_length:]
