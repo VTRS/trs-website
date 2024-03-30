@@ -20,8 +20,7 @@
     <div class="custom-border photo-div overflow-scroll p-5">
         <div class="row">
             <div class="col-12 text-center mb-5">
-                 <h1>Proyectos Fotograficos</h1>
-                 (La galeria por proyecto aun está en desarrollo)
+                 <h1>Proyectos</h1>
             </div>
         </div>
 
@@ -30,15 +29,21 @@
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2">
                     <div class="row custom-border">
                         <div class="col-12 custom-border">
-                            <a class="" href="" data-toggle="lightbox" data-gallery="gallery">
+                            <a class="" href="{% url 'photography:series' serie.id %}">
                                 <div 
                                     class="square glitch"
-                                    
-                                    {% if serie.album.images.all.0.thumbnail %}
-                                        style="background-image: url({{ serie.album.images.all.0.thumbnail.url }});"
+
+                                    {% if serie.cover %}
+                                        style="background-image: url({{ serie.cover.url }});"
+
                                     {% else %}
-                                        style="background-image: url({{ serie.album.images.all.0.image.url }});"
+                                        {% if serie.album.images.all.0.thumbnail %}
+                                        style="background-image: url({{ serie.album.images.all.0.thumbnail.url }});"
+                                        {% else %}
+                                            style="background-image: url({{ serie.album.images.all.0.image.url }});"
+                                        {% endif %}
                                     {% endif %}
+                                    
                                         
                                     alt="Thumbnail"
                                 ></div>
