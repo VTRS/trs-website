@@ -3,6 +3,13 @@
     --secondary: #000000;
 }
 
+/* add variables for darkmode  */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --secondary: #000000;;
+    }
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body:-webkit-scrollbar {
 	display: none;

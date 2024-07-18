@@ -1,0 +1,38 @@
+:root {
+    --primary: #d51c1c;
+    --secondary: #fff82d;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --secondary: #fff82d;
+    }
+}
+
+@font-face {
+    font-family: maleville;
+    src: url(Millave.ttf);
+    font-weight: bold;
+}
+
+.title {
+    font-family: maleville;
+    font-size: 8rem;
+    color: var(--secondary);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.counter {
+    font-family: maleville;
+    font-size: 4rem;
+    color: var(--secondary);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
