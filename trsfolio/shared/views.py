@@ -38,3 +38,7 @@ def contact(request):
                 return HttpResponse("Something went wrong, please refresh the site and try again :(")
 
     return HttpResponse("you did something wrong")
+
+
+def hushush(request):
+    return render(request, 'shared/hushush.html')
