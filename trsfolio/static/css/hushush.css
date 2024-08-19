@@ -41,12 +41,25 @@ a {
     border-radius: 0px;
 }
 
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    width: 100% !important;
+}
+
 @media screen and (min-width: 992px){
     .title {
         font-size: 8rem;
     }
     .counter {
         font-size: 4rem;
+    }
+
+    iframe {
+        width: 60% !important;
     }
     
 }
