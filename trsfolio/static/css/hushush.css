@@ -31,6 +31,16 @@
     margin-top: 1rem;
 }
 
+a {
+    font-size: 1.5rem;
+}
+
+.modal-content {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: 0px;
+}
+
 @media screen and (min-width: 992px){
     .title {
         font-size: 8rem;
