@@ -5,7 +5,7 @@ import math
 
 # Create your views here.
 def portfolio(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by('-id')
     print (projects)
     return render(request, 'software/portfolio.html', {'projects': projects})
 
