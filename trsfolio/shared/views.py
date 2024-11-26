@@ -34,7 +34,7 @@ def contact(request):
                     recipient_list = ['vic@victrs.art'],
                 )
                 return HttpResponse("thanks for your message, he will be in touch as soon as possible")
-            except BadHeaderError:
+            except:
                 return HttpResponse("Something went wrong, please refresh the site and try again :(")
 
     return HttpResponse("you did something wrong")

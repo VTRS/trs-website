@@ -4,7 +4,7 @@ from .models import *
 import math
 # Create your views here.
 def gallery(request):
-    series = Series.objects.all()
+    series = Series.objects.all().order_by('-id')
     return render(request, 'photography/gallery.html', {'series': series})
 
 def series(request, series_id):
