@@ -4,7 +4,6 @@ class Ep(models.Model):
     name = models.CharField(max_length=255)
     artwork = models.ImageField(upload_to='artwork', blank=True, null=True)
     release_date = models.DateField(blank=True, null=True)
-    spotify = models.URLField(blank=True, null=True)
     apple = models.URLField(blank=True, null=True)
     soundcloud = models.URLField(blank=True, null=True)
     bandcamp = models.URLField(blank=True, null=True)
@@ -31,9 +30,9 @@ class Artist(models.Model):
     name = models.CharField(max_length=255)
     instagram = models.URLField(blank=True, null=True)
     soundcloud = models.URLField(blank=True, null=True)
-    spotify = models.URLField(blank=True, null=True)
     apple_music = models.URLField(blank=True, null=True)
     website = models.URLField(blank=True, null=True)
+    bandcamp = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name
