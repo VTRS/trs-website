@@ -24,4 +24,5 @@ urlpatterns = [
     path('photography/', include('photography.urls', namespace='photography')),
     path('music/', include('music.urls', namespace='music')),
     path('secret/', include('secret.urls', namespace='secret')),
+    path('summernote/', include('django_summernote.urls')),
 ]
